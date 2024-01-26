@@ -13,7 +13,7 @@ const SearchByCode = () => {
   const [notFoundMsg, setNotFoundMsg] = useState('');
 
   const CLASSES =
-    'block w-full my-4 text-gray-500 focus:outline-none bg-white rounded-full border border-gray-300';
+    'block w-full my-4 text-secondary focus:outline-none bg-white rounded-full border border-gray-300 placeholder:text-secondary';
 
   const onPropertyIdChange = (ev) => setPropertyId(Number(ev.target.value));
 
@@ -78,11 +78,11 @@ const SearchByCode = () => {
             id="search-property"
             value={propertyId}
             onChange={onPropertyIdChange}
-            className={`${CLASSES} p-3 pl-10 text-MD`}
+            className={`${CLASSES} p-3 pl-10 text-md`}
             placeholder="Código: 00001"
           />
 
-          <button className="text-white absolute pt-2 top-[0px] right-[1px] bottom-[0px] bg-gray-400 hover:bg-gray-500 py-2.5 px-4 xl:px-7 rounded-r-full">
+          <button className="text-secondary absolute pt-2 top-[0px] right-[1px] bottom-[0px] bg-primary-700 hover:bg-primary py-2.5 px-4 xl:px-7 rounded-r-full">
             {isSearching ? 'Buscando...' : 'Buscar'}
           </button>
         </div>

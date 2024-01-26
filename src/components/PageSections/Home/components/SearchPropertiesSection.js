@@ -42,6 +42,8 @@ const SearchPropertiesSection = () => {
       typeOfProperty: ev.target.value,
     });
 
+
+
   const onRegionChange = (ev) => {
     const selectedRegionId = ev.target.value;
     const selectedRegion = regions.find(
@@ -112,15 +114,58 @@ const SearchPropertiesSection = () => {
     }
   };
 
+  const bedroom = [
+    {
+      value: 1, name: "Sin dormitorios"
+    } , 
+    {
+      value: 2, name:"1 dormitorio"
+    }
+    ,{
+      value: 3, name:"2 dormitorios"
+    },
+    {
+      value: 4, name:"3 dormitorios"
+    }
+  ];
+  const bath = [
+    {
+      value: 1, name: "Sin baños"
+    } , 
+    {
+      value: 2, name:"1 baño"
+    }
+    ,{
+      value: 3, name:"2 baños"
+    },
+    {
+      value: 4, name:"3 baños"
+    }
+  ]
+  const parking = [
+    {
+      value: 1, name: "Sin estacionamiento"
+    } , 
+    {
+      value: 2, name:"1 estacionamientos"
+    }
+    ,{
+      value: 3, name:"2 estacionamientos"
+    },
+    {
+      value: 4, name:"3 estacionamientos"
+    }
+  ]
+
   return (
     <div className="my-10">
-      <div className="bg-white rounded-2xl w-100 xl:w-3/5 mx-auto text-black p-4 xl:px-10 border shadow-lg">
+      <div className="bg-secondary rounded-2xl w-100 xl:w-3/5 mx-auto text-primary p-4 xl:px-10 border shadow-lg">
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 grid-rows-1 gap-4">
             <div className="d-flex justify-start items-start pb-4">
-              <div className=" border-gray-200">
+              <div className=" border-x-primary-700">
                 <nav
-                  className="space-x-1 p-2 w-100 text-black mb:16 mx-auto w-6/6 lg:w-3/6 flex justify-center items-center flex-col sm:flex-row"
+                  className="space-x-1 p-2 w-100 text-primary mb:16 mx-auto w-6/6 lg:w-3/6 flex justify-center items-center flex-col sm:flex-row"
                   aria-label="Tabs"
                 >
                   {categories.map((tab) => (
@@ -128,9 +173,9 @@ const SearchPropertiesSection = () => {
                       key={tab}
                       className={`${
                         activeTab === tab
-                          ? 'bg-secondary text-white p-2'
-                          : 'border border-gray-300 bg-gray-400 text-white hover:text-white hover:border-gray-300 ring-1'
-                      }  w-full text-md my-1 font-medium leading-5 rounded-[100px] py-3 focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-secondary ring-opacity-60 ring-offset-2 focus:outline-none focus:bg-secondary text-black p-2`}
+                          ? 'bg-secondary text-primary p-2'
+                          : 'border border-primary bg-secondary-800 text-primary hover:text-primary hover:border-secondary-700 '
+                      }  w-full text-md my-1 font-medium leading-5 rounded-[100px] py-3 focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-100 focus:ring-secondary ring-opacity-60 ring-offset-2 focus:outline-none focus:bg-secondary text-primary p-2`}
                       onClick={(ev) => {
                         ev.preventDefault();
                         setActiveTab(tab);
@@ -150,43 +195,86 @@ const SearchPropertiesSection = () => {
           <div className="grid grid-cols-1 w-full lg:grid-cols-4">
             <div className="mx-1 my-2">
               <select
-                className="select select-ghost bg-white rounded-full border-gray-300 w-full"
+                className="select select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
                 placeholder="Tipo de Propiedad"
                 value={selectedSelects?.typeOfProperty}
                 onChange={onTypeOfPropertyChange}
               >
                 {typeOfProperty?.map(({ value, name }) => (
-                  <option key={value} value={name}>
+                  <option key={value} value={name} className='text-secondary'>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mx-1 my-2">
+              <select
+                className="select select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
+                placeholder="Dormitorios"
+                // value={selectedSelects?.surfacem2}
+                // onChange={onSuperfaceChange}
+              >
+                {bedroom?.map(({ value, name }) => (
+                  <option key={value} value={name} className='text-secondary' placeholder='Dormitorios'>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mx-1 my-2">
+              <select
+                className="select select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
+                placeholder="Baños"
+                // value={selectedSelects?.typeOfProperty}
+                // onChange={onTypeOfPropertyChange}
+              >
+                {bath?.map(({ value, name }) => (
+                  <option key={value} value={name} className='text-secondary'>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mx-1 my-2">
+              <select
+                className="select select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
+                placeholder="Tipo de Propiedad"
+                // value={selectedSelects?.typeOfProperty}
+                // onChange={onTypeOfPropertyChange}
+              >
+                {parking?.map(({ value, name }) => (
+                  <option key={value} value={name} className='text-secondary'>
                     {name}
                   </option>
                 ))}
               </select>
             </div>
 
-            <div className="mx-1 my-2">
+          </div>
+          <div className="grid grid-cols-1 w-full lg:grid-cols-3">
+          <div className="mx-1 my-2">
               <select
-                className="select select-ghost bg-white rounded-full border-gray-300 w-full"
+                className="select select-ghost bg-white rounded-full border-gray-300 w-full text-secondary-700 placeholder:text-secondary"
                 placeholder="Region"
                 value={selectedSelects?.region}
                 onChange={onRegionChange}
               >
                 {regions?.map(({ id, name }) => (
-                  <option key={id} value={id} name={name}>
+                  <option key={id} value={id} name={name} className='text-secondary'>
                     {name}
                   </option>
                 ))}
               </select>
             </div>
-
             <div className="mx-1 my-2">
               <select
-                className="select select-ghost bg-white rounded-full border-gray-300 w-full"
+                className="select select-ghost bg-white rounded-full text-secondary border-gray-300 w-full placeholder:text-secondary" 
                 placeholder="Comuna"
                 value={selectedSelects?.commune}
                 onChange={onCommuneChange}
               >
                 {communes?.map(({ id, name }) => (
-                  <option key={id} value={name}>
+                  <option key={id} value={name} className='text-secondary'>
                     {name}
                   </option>
                 ))}
@@ -196,19 +284,21 @@ const SearchPropertiesSection = () => {
             <div className="mx-1 flex justify-center items-center my-2">
               <ButtonPrimary
                 type="submit"
-                className="block w-full p-[.7rem] text-center rounded-full border bg-secondary-400 text-white border-secondary-300 hover:bg-secondary"
+                className="block w-full p-[.7rem] text-center rounded-full border bg-primary-700 text-secondary  hover:bg-primary"
               >
                 {isSearching ? 'Buscando...' : 'Buscar'}
               </ButtonPrimary>
             </div>
           </div>
+          
+
 
           <div className="my-5 w-full ">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-primary-700">
               Buscar por{' '}
               <button
                 onClick={handleOpenSearchCode}
-                className="text-primary hover:text-primary-opacity"
+                className="text-primary-800 hover:text-secondary-800"
               >
                 código de propiedad
               </button>

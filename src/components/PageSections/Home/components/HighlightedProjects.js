@@ -30,10 +30,10 @@ const HighlightedProjects = () => {
   }, [highlightedProperties, getHighlightedProperties]);
 
   return (
-    <Section className="bg-gray-50 py-1">
-      <HeadingSection title="Proyectos Destacados" />
+    <Section className="bg-[#f2f4f7] py-3 mb-6 xl:py-1 ">
+      <HeadingSection title="PROPIEDADES DESTACADAS" className="3xl:my-1"/>
 
-      <div className=" h-[550px] flex items-center justify-center">
+      <div className=" h-[600px] flex items-center justify-center">
         {isLoading && <p>Obteniendo Propiedades destacadas...</p>}
         {getHighlightedProperties.length > 0 ? (
           <AliceCarousel
@@ -42,15 +42,15 @@ const HighlightedProjects = () => {
             controlsStrategy="alternate"
             autoPlayStrategy="none"
             autoPlayInterval={2500}
-            animationDuration={1000}
-            animationType="fadeout"
+            animationDuration={2000}
+            animationType="slide"
             touchTracking={false}
             disableButtonsControls
             disableDotsControls
             autoPlay
             infinite
             items={getHighlightedProperties?.map((property) => (
-              <div key={property?.id} className="m-3">
+              <div key={property?.id} className="m-3 mb-5">
                 <PropertyCard data={property} />
               </div>
             ))}

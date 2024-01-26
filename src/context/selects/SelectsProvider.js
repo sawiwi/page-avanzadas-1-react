@@ -43,6 +43,7 @@ const SelectsProvider = ({ children }) => {
         type.name !== 'agrícola' &&
         type.name !== 'Terreno En Construccion'
     );
+
     setOperationType(
       pathname === '/soy-inversionista/unidades-nuevas'
         ? filtredOperationTypeSelects
@@ -84,6 +85,7 @@ const SelectsProvider = ({ children }) => {
           installmentType,
           selectedSelects,
           setSelectedSelects,
+          
         },
       }}
     >

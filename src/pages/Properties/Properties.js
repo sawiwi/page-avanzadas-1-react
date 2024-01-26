@@ -16,7 +16,7 @@ const Properties = () => {
   return (
     <Section className="relative flex flex-col md:flex-row">
       <Head title="Propiedades" />
-      {/* <PropertiesComponent /> */}
+      <PropertiesComponent />
     </Section>
   );
 };

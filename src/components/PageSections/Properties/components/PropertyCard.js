@@ -12,32 +12,69 @@ const PropertyCard = ({ data, isList }) => {
   const { id, title, image, address, commune, city, price, types } = data;
   const { BiMap } = iconsList;
 
+  // Validador de extension .jpg / .png/ .jpeg  para las imgs
+  const validaImage = (image) => {
+    if (image) {
+      const validExtensions = ['.jpg', '.jpeg', '.png'];
+  
+      if (validExtensions.some(ext => image.toLowerCase().endsWith(ext))) {
+        return (
+          <img
+            className={`${
+              isList
+                ? 'h-[299px] w-[100%] md:w-[400px] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
+                : 'rounded-t-xl'
+            }  object-cover h-[299px] w-full`}
+            src={image}
+            alt={`top-img-${title}`}
+            width="full"
+          />
+        );
+      }
+    }
+    return (
+      <img
+        className={`${
+          isList
+            ? 'h-[299px] w-[100%] md:w-[400px] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
+            : 'rounded-t-xl'
+        }  object-cover h-[299px] w-full`}
+        src={`https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg`}
+        alt={`top-img-${title}`}
+        width="full"
+      />
+    );
+  };
+
   return (
     <div
       className={`${
         isList
-          ? 'flex flex-col items-center bg-white border border-gray-200 hover:shadow-lg md:flex-row'
+          ? 'flex flex-col items-centerborder border-primary-700 bg-primary hover:shadow-xl md:flex-row'
           : 'w-full'
-      } border rounded-xl border-gray-200 hover:cursor-pointer hover:shadow-xl transition duration-300 ease-in-out`}
+      } border rounded-xl hover:cursor-pointer hover:shadow-xl bg-primary transition duration-300 ease-in-out `}
     >
-      <img
+      {/* <img
         className={`${
           isList
             ? 'h-[250px] w-[100%] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
             : 'rounded-t-xl'
         } h-64 xl:h-64 w-[100%] object-cover`}
-        src={`https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${id}//1.jpg`}
+        src={`https://pages-api.panal.house/images/${id}/1.jpg`}
         alt={`top-img-${title}`}
         width="full"
-      />
+      /> */}
 
-      <div className="p-5">
-        <span className="uppercase text-primary">Cod: {id}</span>
-        <h5 className="mb-2 h-18 text-md font-light xl:text-md text-gray-700">
+        {/* Declaramos la validación de imagen */}
+        {validaImage(image)}
+
+      <div className="p-3">
+        <span className="uppercase text-secondary">Cod: {id}</span>
+        <h5 className="mb-2 h-18 text-md font-light xl:text-md text-secondary-800">
           {truncateString(title ?? 'Titulo de propiedad no registrado', 70)}
         </h5>
-        <p className="mb-3 font-normal text-sm text-gray-400 flex items-start justify-start">
-          <BiMap className="text-xl mr-1" />
+        <p className="mb-3 font-normal text-sm text-secondary-800 flex items-start justify-start">
+          <BiMap className="text-xl mr-1 text-secondary" />
           {truncateString(
             `${address || 'Dirección no registrada'} ${
               commune || 'Comuna no registrada'
@@ -47,23 +84,23 @@ const PropertyCard = ({ data, isList }) => {
         </p>
 
         {data?.currency?.name === 'UF' && data?.currency?.isoCode === 'UF' && (
-          <p className="flex justify-end items-center mb-3 font-normal bg-slate-50 border-l-2 border-primary-400 p-1 rounded-sm text-primary">
-            <span className="mr-1">{types?.[0]}: </span>{' '}
+          <p className="flex justify-end items-center mb-3 font-normal bg-primary border-l-2 border-primary-400 p-1 rounded-sm text-secondary">
+            <span className="mr-1 text-secondary">{types?.[0]}: </span>{' '}
             {parseToDecimal(price || 0)} UF
           </p>
         )}
 
         {data?.currency?.name === 'Peso Chileno' &&
           data?.currency?.isoCode === 'CLP' && (
-            <p className="flex justify-end items-center mb-3 font-normal bg-slate-50 border-l-2 border-primary-400 p-1 rounded-sm text-primary">
-              <span className="mr-1">{types?.[0]}:</span>
+            <p className="flex justify-end items-center mb-3 font-normal bg-primary border-l-2 border-primary-400 p-1 rounded-sm text-secondary">
+              <span className="mr-1 text-secondary">{types?.[0]}:</span>
               {parseToCLPCurrency(price)} CLP
             </p>
           )}
 
         <Link
           to={`/propiedades/${id}?statusId=${company.statusId}&companyId=${company.companyId}`}
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-primary-opacity focus:ring-4 focus:outline-none focus:ring-primary-300"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-primary bg-secondary-700 rounded-lg hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary-300"
         >
           Ver Detalles
           <svg

@@ -9,8 +9,8 @@ const HomeComponent = () => {
   return (
     <Fragment>
       <CarouselSection />
-      {/* <SearchPropertiesSection /> */}
-      {/* <HighlightedProjects /> */}
+      <SearchPropertiesSection />
+      <HighlightedProjects />
       <InformationSection/>
       <ServicesContactSection />
     </Fragment>
