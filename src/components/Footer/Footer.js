@@ -4,8 +4,8 @@ import Button from '../Button/Button';
 
 const Footer = () => (
   <footer className="bg-primary-700 pt-10 pb-20 xl:px-28">
-    <div className="flex flex-wrap justify-center mx-4 lg:mx-0">
-      <div className="w-full h-full flex justify-center sm:justify-start items-center sm:items-start flex-col sm:w-1/2 lg:w-4/12">
+    <div className="flex flex-wrap  mx-4 lg:mx-0">
+      <div className="w-full h-full flex justify-start items-center sm:items-start flex-col sm:w-1/2 lg:w-4/12 xl:w-3/12 3xl:w-4/12">
         <div className="w-5/6">
           <Link
             href="/"
@@ -32,12 +32,12 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="w-full flex justify-center sm:justify-start items-center sm:items-start flex-col sm:w-1/2 xl:w-4/12 3xl:w-2/12">
+      <div className="w-full h-full flex justify-center sm:justify-start items-center sm:items-start flex-col sm:w-1/2 xl:w-3/12 3xl:w-2/12">
         <div className="w-5/6">
           <Link
             href="/"
             to=""
-            className="w-96 py-2 text-xl text-center my-6 font-customFont text-secondary-700 font-semibold hover:text-secondary-opacity duration-200"
+            className="w-96 py-2 text-xl text-center my-3 font-customFont text-secondary-700 font-semibold hover:text-secondary-opacity duration-200"
           >
             MENÚ
           </Link>
@@ -96,7 +96,7 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-center sm:justify-start items-center sm:items-start flex-col sm:w-1/2 lg:w-4/12">
+      <div className="w-full flex mt-12 xl:mt-0 justify-center sm:justify-start items-center sm:items-start flex-col sm:w-1/2 lg:w-3/12 xl:w-3/12">
         <div className="w-5/6">
           <Link
             href="/"
@@ -153,19 +153,19 @@ const Footer = () => (
             </div>
         </div>
       </div>
-      <div className="w-full h-full flex justify-center sm:justify-start items-center sm:items-start flex-col sm:w-1/2 xl:w-4/12 3xl:w-2/12 3xl:my-20 ">
+      <div className="w-full h-full mt-10 mb-10 mx-10 xl:mx-0 xl:mt-0 sm:w-1/2 xl:w-2/12 3xl:w-2/12 3xl:my-14 ">
         <div className="w-5/6">
           <Link
             href="/"
             to=""
-            className="w-96 py-2 text-xl xl:text-[120px] text-center my-16  text-secondary-700 font-bold font-customFont hover:text-secondary-opacity duration-200"
+            className="w-96 py-2 px-2 text-[80px] xl:px-0 xl:text-[90px] 3xl:text-[120px] text-center  text-secondary-700 font-bold font-customFont hover:text-secondary-opacity duration-200"
           >
             LOGO
           </Link>
         </div>
       </div>
     </div>
-    <hr className='border-secondary-opacity'/>
+    <hr className='border-secondary-opacity w-full'/>
     <div className="flex flex-wrap justify-end mx-4 lg:mx-0">
        <p className="text-sm text-secondary-700 mt-2 font-customFont">
           <span className="font-semibold text-secondary-800 ">©</span>{' '}

@@ -46,9 +46,9 @@ const NavMobile = ({ data = navigationData, onClickClose }) => {
 
   const _renderItem = (item) => {
     return (
-      <Disclosure key={item.id} as="li" className="text-gray-900">
+      <Disclosure key={item.id} as="li" className="text-secondary-800">
         <Link
-          className="flex w-full items-center py-2.5 px-4 font-medium uppercase tracking-wide text-sm hover:bg-[#e5e7eb] rounded-lg"
+          className="flex w-full items-center py-2.5 px-4 font-semibold uppercase tracking-wide text-md hover:bg-[#e5e7eb] rounded-lg"
           to={{
             pathname: item.href || undefined,
           }}
@@ -82,7 +82,7 @@ const NavMobile = ({ data = navigationData, onClickClose }) => {
 
   return (
     <div className="overflow-y-auto w-full max-w-sm h-screen py-2 transition transform shadow-lg bg-white  divide-y-2 divide-[#d5d7db]">
-      <div className="py-6 px-5">
+      <div className="py-3 px-5">
         <Logo />
         <div className="flex flex-col mt-5 text-gray-700 text-sm">
           <div className="flex justify-between items-center mt-4">

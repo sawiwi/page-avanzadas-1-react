@@ -62,8 +62,8 @@ const NavigationItem = ({ menuItem }) => {
         pathname === href
           ? 'bg-secondary-700 text-primary inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5 rounded-full font-customFont uppercase'
           : name === 'Mi cuenta'
-          ? 'bg-primary inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5 rounded-full text-primary uppercase hover:bg-primary hover:text-secondary font-customFont'
-          : 'inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5 rounded-full text-secondary hover:bg-secondary hover:text-primary-700 font-customFont uppercase'
+          ? 'bg-primary inline-flex items-center text-sm xl:text-sm font-normal py-2 px-4 xl:px-3 3xl:px-5 rounded-full text-primary uppercase hover:bg-primary hover:text-secondary font-customFont'
+          : 'inline-flex items-center text-sm xl:text-sm font-normal py-2 px-4 xl:px-3 3xl:px-5 rounded-full text-secondary hover:bg-secondary hover:text-primary-700 font-customFont uppercase'
       }`}
     >
       {name}

@@ -5,11 +5,17 @@ import UnneLogoSvg from '../Icons/custom/unneLogo';
 
 const Logo = () => {
   return (
-    <Link to="/">
-      {UnneLogo && (
-        <UnneLogoSvg></UnneLogoSvg>
-      )}
-    </Link>
+    // <Link to="/">
+    //   {UnneLogo && (
+    //     <UnneLogoSvg></UnneLogoSvg>
+    //   )}
+    // </Link>
+    <Link
+    href="/"
+    className="text-[30px]  xl:text-[50px] text-start  xl:text-start  text-secondary-700 font-bold font-customFont hover:text-secondary-opacity duration-200"
+  >
+    LOGO
+  </Link>
   );
 };
 

@@ -6,12 +6,12 @@ import MenuBar from '../MenuBar/MenuBar';
 const MainNav = () => {
   return (
     <div className="relative z-10 bg-primary">
-      <div className="relative py-5 px-0 flex justify-between items-center space-x-4 xl:space-x-8">
-        <div className="flex justify-start flex-grow items-center space-x-3 sm:space-x-8 lg:space-x-10">
+      <div className="relative py-5 px-0 flex  items-center space-x-1 xl:space-x-8">
+        <div className="flex justify-start flex-grow items-center space-x-1 sm:space-x-8 lg:space-x-10">
           <Logo />
         </div>
 
-        <div className="flex-shrink-0 flex items-center justify-end text-secondary-700 space-x-1">
+        <div className="flex-shrink-0 flex items-center justify-end  text-secondary-700 space-x-1">
           <div className="hidden items-center xl:flex space-x-2">
             <Navigation />
           </div>

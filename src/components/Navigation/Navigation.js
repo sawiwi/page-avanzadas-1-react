@@ -4,7 +4,7 @@ import { navigationData } from '../../data/navigation';
 
 const Navigation = () => {
   return (
-    <ul className="absolute lg:w-full xl:left-[290px] 3xl:left-[550px] lg:flex lg:flex-wrap lg:items-center lg:space-x-8 xl:space-x-5  p-10">
+    <ul className="absolute lg:w-full xl:left-[270px] 3xl:left-[550px] lg:flex lg:flex-wrap lg:items-center lg:space-x-8 xl:space-x-5 p-10">
       {navigationData?.length > 0 &&
         navigationData.map((item) => (
           <NavigationItem key={item?.id} menuItem={item} />
