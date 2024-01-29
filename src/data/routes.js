@@ -3,6 +3,7 @@ import About from '../pages/About';
 import Properties from '../pages/Properties/Properties';
 import Property from '../pages/Properties/Property';
 import Services from '../pages/ServicesSection';
+import Contact from '../pages/Contact';
 
 
 
@@ -35,54 +36,44 @@ export const navigationRoutes = [
     path: '/propiedades',
     element: <Properties />,
   },
-    {
+  {
     id: 4,
+    name: 'Propiedades en mapa',
+    path: '/propiedades/propiedades-en-mapa',
+    element: <PropertiesInMap />,
+  },
+  {
+    id: 5,
     name: 'Propiedad',
     path: '/propiedades/:id',
     element: <Property />,
   },
   {
-    id: 5,
+    id: 6,
     name: 'Servicios',
     path: '/servicios',
     element: <Services />,
   },
   {
-    id: 6,
+    id: 7,
     name: 'Contacto',
     path: '/contacto',
-    element: <LegalServices />,
+    element: <Contact />,
   },
-  {
-    id: 7,
-    name: 'Publica gratis',
-    path: '/publica-gratis',
-    element: <AuctionUnits />,
-  },
+  // {
+  //   id: 8,
+  //   name: 'Publica gratis',
+  //   path: '/publica-gratis',
+  //   element: <AuctionUnits />,
+  // },
+
   // {
   //   id: 2,
   //   name: '¿Quiénes somos?',
   //   path: '/quienes-somos',
   //   element: <About />,
   // },
-  // {
-  //   id: 3,
-  //   name: 'Propiedades',
-  //   path: '/propiedades',
-  //   element: <Properties />,
-  // },
-  // {
-  //   id: 15,
-  //   name: 'Socios Unne',
-  //   path: '/partnersUnne/socios-unne',
-  //   element: <PartnersUnne />,
-  // },
-  // {
-  //   id: 4,
-  //   name: 'Propiedad',
-  //   path: '/propiedades/:id',
-  //   element: <Property />,
-  // },
+
   // {
   //   id: 5,
   //   name: 'Quiero Vender',
@@ -131,10 +122,5 @@ export const navigationRoutes = [
   //   path: '/eres-corredor/academia-unne',
   //   element: <UnneAcademy />,
   // },
-  // {
-  //   id: 14,
-  //   name: 'Propiedades en mapa',
-  //   path: '/propiedades/propiedades-en-mapa',
-  //   element: <PropertiesInMap />,
-  // },
+
 ];

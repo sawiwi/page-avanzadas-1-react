@@ -23,12 +23,12 @@ export const navigationData = [
   {
     id: 5,
     name: 'Contacto',
-   contacto:'/contacto'
+    href:'/contacto'
   },
   {
     id: 6,
     name: 'Publica gratis',
-   contacto:'/publica-gratis'
+    href:'https://demo-landing-1.unne.cl/'
   },
   {
     id: 7,
