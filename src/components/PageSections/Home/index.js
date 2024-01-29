@@ -3,7 +3,7 @@ import CarouselSection from './components/CarouselSection';
 import SearchPropertiesSection from './components/SearchPropertiesSection';
 import HighlightedProjects from './components/HighlightedProjects';
 import ServicesContactSection from './components/ServicesContactSection';
-import InformationSection from './components/Information';
+import AboutInfo from './components/Information';
 
 const HomeComponent = () => {
   return (
@@ -11,8 +11,8 @@ const HomeComponent = () => {
       <CarouselSection />
       <SearchPropertiesSection />
       <HighlightedProjects />
-      <InformationSection/>
-      <ServicesContactSection />
+      <AboutInfo/>
+      {/* <ServicesContactSection /> */}
     </Fragment>
   );
 };

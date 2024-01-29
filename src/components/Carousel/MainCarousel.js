@@ -33,12 +33,12 @@ const MainCarousel = ({ data }) => {
               />
 
               <div className="absolute inset-0 flex items-center justify-center w-100 pl-4 xl:pl-32 bg-secondary-grey bg-opacity-30">
-                <div className="d-flex flex-col w-2/3 xl:w-1/3 ">
-                  <h2 className="text-2xl font-bold xl:text-4xl uppercase pb-2 mb-2 text-white drop-shadow-lg">
+                <div className="d-flex flex-col w-2/3 3xl:w-1/3 ">
+                  <h2 className=" text-2xl font-bold xl:text-4xl uppercase pb-2 mb-2 text-white drop-shadow-lg">
                     {slide.title}
                   </h2>
                   {/* <p className="text-md xl:text-xl text-white">{slide.desc}</p> */}
-                  <div className='flex justify-between'>
+                  <div className='flex 3xl:justify-between'>
                     <input
                       type="search"
                       placeholder="Buscar por..."
@@ -46,7 +46,7 @@ const MainCarousel = ({ data }) => {
                       id="searchInput"
                       // value={formData?.name}
                       // onChange={(ev) => handleName(ev.target.value)}
-                      className="w-[450px] xl:w-[600px] p-2 pl-3 rounded-3xl bg-white text-lg text-secondary-800 placeholder:text-secondary-700 placeholder:font-medium outline-none focus:outline-none"
+                      className="w-[450px] xl:w-[450px] 3xl:w-[600px] p-2 pl-3 rounded-3xl bg-white text-lg text-secondary-800 placeholder:text-secondary-700 placeholder:font-medium  outline-none focus:outline-none"
                     />
                   <Button
                       type="submit"
