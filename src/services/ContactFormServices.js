@@ -66,15 +66,17 @@ const ContactFormServices = {
     return response.data;
   },
 
-  sendContactForm: async (from, name, userEmail, phone, realtorEmail) => {
+  sendContactForm: async (from, name, userEmail, phone, realtorEmail, subject, message) => {
     const response = await axios.post(
       `https://formsubmit.co/ajax/${realtorEmail}`,
       {
         Desde: from,
         Nombre: name,
         Correo: userEmail,
-        Telefono: phone,
-        '_subject': 'De: Remate/Unne.cl'
+        Teléfono: phone,
+        Asunto: subject,
+        Mensaje: message,
+        '_subject': 'De: Mi página web'
       },
       {
         headers: {
@@ -82,7 +84,9 @@ const ContactFormServices = {
           Accept: 'application/json',
         },
       }
+
     );
+    console.log(response.data)
     return response.data;
   },
 
