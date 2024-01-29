@@ -7,9 +7,8 @@ const AboutComponent = () => {
   return (
     <Fragment>
       <About />
-      <Alliances />
-      <ContactUs />
-      
+      {/* <Alliances />
+      <ContactUs /> */}
     </Fragment>
   );
 };
