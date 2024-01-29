@@ -20,7 +20,7 @@ import { TbSquareRoundedNumber4Filled } from 'react-icons/tb';
 
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
-import { HiClipboard, HiClipboardCheck } from 'react-icons/hi';
+import { HiClipboard, HiClipboardCheck, HiOutlineCurrencyDollar, HiOutlineBriefcase , HiOutlinePresentationChartBar  } from 'react-icons/hi';
 import { RiArrowDownSLine } from 'react-icons/ri';
 
 import {
@@ -55,7 +55,7 @@ import {
 import { BsFacebook } from 'react-icons/bs';
 import { BsInstagram } from 'react-icons/bs';
 import { BsYoutube } from 'react-icons/bs';
-import { MdViewList } from 'react-icons/md';
+import { MdViewList, MdAddHomeWork  } from 'react-icons/md';
 import { GoSearch } from 'react-icons/go';
 
 export const iconsList = {
@@ -109,4 +109,8 @@ export const iconsList = {
   MdOutlineFilterList,
   MdOutlineFilterListOff,
   BiMap,
+  HiOutlineCurrencyDollar,
+  HiOutlineBriefcase,
+  HiOutlinePresentationChartBar,
+  MdAddHomeWork 
 };
