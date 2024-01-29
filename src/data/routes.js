@@ -2,6 +2,10 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import Properties from '../pages/Properties/Properties';
 import Property from '../pages/Properties/Property';
+import Services from '../pages/ServicesSection';
+
+
+
 import ToSell from '../pages/Owner/ToSell';
 import ToLease from '../pages/Owner/ToLease';
 import AuctionUnits from '../pages/Investor/AuctionUnits';
@@ -11,7 +15,6 @@ import ToPartner from '../pages/Broker/ToPartner';
 import LegalServices from '../pages/Broker/LegalServices';
 import UnneAcademy from '../pages/Broker/UnneAcademy';
 import PropertiesInMap from '../pages/PropertiesInMap';
-import PartnersUnne from '../pages/PartnersUnne/PartnersUnne'
 
 export const navigationRoutes = [
   {
@@ -42,7 +45,7 @@ export const navigationRoutes = [
     id: 5,
     name: 'Servicios',
     path: '/servicios',
-    element: <ToSell />,
+    element: <Services />,
   },
   {
     id: 6,
