@@ -11,16 +11,16 @@ const ViewServices = () =>{
 
     return (
         <Section>
-             <div className="container 3xl:px-24"> 
-                <div className="mt-12 3xl:mt-28 my-10 flex border-l-4 h-9 border-secondary-700 ">
-                    <h2 className=" text-secondary-700 text-xl xl:text-3xl ml-2 uppercase">Servicios</h2>
+             <div className="container px-8 3xl:px-24"> 
+                <div className="mt-16 3xl:mt-28 my-10 flex border-l-4 h-6 3xl:h-9 border-secondary-700 ">
+                    <h2 className=" text-secondary-700 text-2xl xl:text-3xl ml-2 uppercase">Servicios</h2>
                 </div>
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-5 3xl:mb-16 ">
                     {CardServicesData ? CardServicesData.map((item, idx) => {
                         return(
                         <div className="col-span-1 hover:scale-105 duration-300" key={idx}>
-                            <div className="card shadow-xl bg-secondary p-2 rounded-md 3xl:min-h-[18.5rem]">
-                                <div className="mt-6 py-5 3xl:text-6xl text-primary flex justify-center">
+                            <div className="card shadow-xl bg-secondary p-2 rounded-md h-[15rem] 3xl:min-h-[18.5rem]">
+                                <div className="mt-2 3xl:mt-6 py-2 3xl:py-5 text-5xl 3xl:text-6xl text-primary flex justify-center">
                                     {item.icon} 
                                 </div>
                                 <div className="py-2 mt-2">

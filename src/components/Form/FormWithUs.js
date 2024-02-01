@@ -47,7 +47,7 @@ const FormWithUs = () =>{
   };
 
     return(
-        <div className="bg-secondary w-full 3xl:w-[100%] xl:min-h-[40vh] 3xl:min-h-[75vh] xl:p-2 3xl:p-8">
+        <div className="bg-secondary w-[21rem] 3xl:w-[100%] xl:min-h-[40vh] 3xl:min-h-[75vh] xl:p-2 3xl:p-8">
         <div className="text-center">
           <p className="text-xl xl:text-lg 3xl:text-2xl  font-bold text-primary py-6 xl:mt-0 3xl:mt-16 px-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam facilis fugiat, tenetur eius rem, architecto esse perspiciatis aperiam
@@ -55,7 +55,7 @@ const FormWithUs = () =>{
         </div>
         {/* <form name="FormSubmit" onSubmit={onFormSubmit} className="xl:py-3 3xl:py-6 xl:px-6 3xl:px-20"> */}
         <form name="FormSubmit" className="xl:py-3 3xl:py-6 xl:px-6 3xl:px-20">
-            <div className="flex mb-5">
+            <div className="flex mb-5 justify-center">
                 <select
                 value={selectedSelects?.operationType}
                 onChange={onOperationTypeChange}
@@ -69,7 +69,7 @@ const FormWithUs = () =>{
                 ))}
                 </select>
             </div>
-        <div className="flex mb-5">
+        <div className="flex justify-center mb-5">
             <select
             value={selectedSelects?.typeOfProperty}
             onChange={onTypeOfPropertyChange}
@@ -140,7 +140,7 @@ const FormWithUs = () =>{
               />
             </div>
           </div>
-        <div className="flex mb-5">
+        <div className="flex mb-5 justify-center">
             <select
             onChange={onRegionChange}
             className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
@@ -173,7 +173,7 @@ const FormWithUs = () =>{
           <div className="flex mb-5 justify-center items-center">
             <button
               type="submit"
-              className="block w-[200px] p-4 my-1  font-semibold text-md rounded-full hover:shadow-sm transition ease-in-out duration-300 text-secondary bg-primary hover:bg-primary-opacity"
+              className="block w-[200px] p-4 my-2 mb-4  font-semibold text-md rounded-full hover:shadow-sm transition ease-in-out duration-300 text-secondary bg-primary hover:bg-primary-opacity"
             >
               <span className="max-h-10">
                 Enviar
