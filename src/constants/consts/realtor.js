@@ -8,7 +8,7 @@ export const realtorData = {
 
 export const timeData = {
   daysWeek:'Lunes a viernes',
-  times: '8:30 - 18-00',
+  times: '8:30 - 1800',
   weekend: 'Sábado',
   timesWeekend:'09:00 - 14:30'
 

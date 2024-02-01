@@ -6,7 +6,7 @@ const ViewContact = () =>{
     return(
         <Section>
             <div className="container">
-                <div className="grid grid-flow-row grid-cols-2 px-10 xl:px-44">
+                <div className="grid  grid-cols-1 xl:grid-cols-2 px-2 xl:px-44">
                     <div className="col-span-1">
                         <InfoContact />
                     </div>

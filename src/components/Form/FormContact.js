@@ -192,7 +192,7 @@ const FormContact = ({ title }) => {
   };
 
   return (
-    <div className="bg-secondary w-full xl:min-h-[40vh] 3xl:min-h-[80vh] xl:p-2 3xl:p-8">
+    <div className="bg-secondary w-[21rem] xl:w-full xl:h-[95%] 3xl:min-h-[80vh] xl:p-2 3xl:p-8">
       <div className="text-center">
         <h2 className="text-xl xl:text-2xl 3xl:text-4xl  font-bold text-primary py-6 xl:mt-0 3xl:mt-20 px-5">
           {title}
@@ -286,7 +286,7 @@ const FormContact = ({ title }) => {
         <div className="flex mb-5 justify-center items-center">
           <Button
             type="submit"
-            className="block w-[200px] p-4 my-1  font-semibold text-md rounded-full hover:shadow-sm transition ease-in-out duration-300 text-secondary bg-primary hover:bg-primary-opacity"
+            className="block w-[200px] p-4 my-2 mb-4  font-semibold text-md rounded-full hover:shadow-sm transition ease-in-out duration-300 text-secondary bg-primary hover:bg-primary-opacity"
           >
             <span className="max-h-10">
               {loading ? (
