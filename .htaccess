@@ -12,38 +12,21 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^propiedades/([0-9]+)/?$ /index.html [L]
 
-# Ruta /quienes-somos
-RewriteRule ^quienes-somos /index.html [L]
-
-# Ruta /soy-propietario/quiero-vender
-RewriteRule ^soy-propietario/quiero-vender /index.html [L]
-
-# Ruta /soy-propietario/quiero-arrendar
-RewriteRule ^soy-propietario/quiero-arrendar /index.html [L]
-
-# Ruta /soy-inversionista/unidades-en-remate
-RewriteRule ^soy-inversionista/unidades-en-remate /index.html [L]
-
-# Ruta /soy-inversionista/unidades-nuevas
-RewriteRule ^soy-inversionista/unidades-nuevas /index.html [L]
-
-# Ruta /soy-inversionist/administracion-de-arriendo
-RewriteRule ^soy-inversionista/administracion-de-arriendo /index.html [L]
-
-# Ruta /eres-corredor/asociate
-RewriteRule ^eres-corredor/asociate /index.html [L]
-
-# Ruta /eres-corredor/servicios-legales
-RewriteRule ^eres-corredor/servicios-legales /index.html [L]
-
-# Ruta /eres-corredor/academia-unne
-RewriteRule ^eres-corredor/academia-unne /index.html [L]
+# Ruta /nosotros
+RewriteRule ^nosotros /index.html [L]
 
 # Ruta /propiedades/maps-propiedades
 RewriteRule ^eres-corredor/academia-unne /index.html [L]
 
 # Ruta /propiedades/propiedades-en-mapa
 RewriteRule ^propiedades/propiedades-en-mapa /index.html [L]
+
+# Ruta /servicios
+RewriteRule ^servicios /index.html [L]
+
+# Ruta /contacto
+RewriteRule ^contacto /index.html [L]
+
 
 # Página 404 personalizada
 ErrorDocument 404 /index.html

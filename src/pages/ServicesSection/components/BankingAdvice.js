@@ -12,9 +12,16 @@ return(
             </div>
         </div>
         <div className="col-span-1">
-            <img src={imgBanking} alt="" className="h-full w-full object-cover bg-primary-700/30"/>
-            <div className="absolute 3xl:right-2 inset-y-0 right-0 flex items-center justify-end 3xl:w-[720px] pl-2 bg-secondary-grey bg-opacity-30">
-                <div className="flex flex-col mr-2 border-r-4 h-10 border-primary">
+            <div className=' h-full'>
+                <img src={imgBanking} alt="" className="h-full w-full object-cover  "/>
+                {/* <div className="absolute top-0 right-0 flex flex-col mr-2 border-r-4 h-10 border-primary hover:backdrop-blur-sm duration-150 bg-secondary-grey/30 px-10">
+                    <h2 className=" text-2xl font-bold xl:text-3xl 3xl:text-4xl uppercase pb-2 mb-2 mr-2 text-primary drop-shadow-lg">
+                        Asesoria Bancaria
+                    </h2>
+                </div> */}
+            </div>
+            <div className="3xl:right-2 flex items-center justify-end 3xl:w-[720px] pl-2">
+                <div className="absolute top-0 right-0 flex flex-col mr-2 border-r-4 h-10 border-primary hover:backdrop-blur-sm duration-150 bg-secondary-grey/30 px-10">
                     <h2 className=" text-2xl font-bold xl:text-3xl 3xl:text-4xl uppercase pb-2 mb-2 mr-2 text-primary drop-shadow-lg">
                         Asesoria Bancaria
                     </h2>

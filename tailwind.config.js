@@ -26,13 +26,20 @@ module.exports = {
           customFont:['Work Sans', 'sans-serif']
       },
       colors: {
-        primary: {
-          DEFAULT: '#ffffe5',
-          opacity: '#ffffe5d4',
-          ligth: '#ffffe5',
-          700: '#f2f2d6',
-          // 400: '#fb923C',
-        },
+        // primary: {
+        //   DEFAULT: '#bbffe4',
+        //   opacity: '#bbffe4d4',
+        //   ligth: '#bbffe5',
+        //   700: '#a0ffd9',
+        //   // 400: '#fb923C',
+        // },
+          primary: {
+            DEFAULT: '#ffffe5',
+            opacity: '#ffffe5d4',
+            ligth: '#ffffe5',
+            700: '#f2f2d6',
+            // 400: '#fb923C',
+          },
         secondary: {
           DEFAULT: '#614d19',
           opacity: '#614d19d4',
@@ -43,14 +50,16 @@ module.exports = {
           // 300: '#FCD34D',
           // 400: '#FACC15',
         },
-        tertiary: {
-          DEFAULT: '#353843',
-          opacity: '#353843D4',
-        },
-        quertiary: {
-          DEFAULT: '#353843',
-          opacity: '#353843D4',
-        },
+        // secondary: {
+        //   DEFAULT: '#000018',
+        //   opacity: '#000018d4',
+        //   ligth: '#01014a',
+        //   700: '#000083',
+        //   800:'#000064',
+        //   grey: '#85795b'
+        //   // 300: '#FCD34D',
+        //   // 400: '#FACC15',
+        // },
       },
     },
   },
