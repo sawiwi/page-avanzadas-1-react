@@ -5,6 +5,8 @@ import Slide4 from '../assets/img/carousel/slide4.jpg';
 import Slide3 from '../assets/img/carousel/hero_bg_3.jpg';
 import Slide2 from '../assets/img/carousel/hero_bg_2.jpg';
 
+import imgWithUs from '../assets/img/carousel/hero_bg_2.jpg'
+
 /** Main Carousel Data */
 export const mainCarouselData = [
   {
@@ -27,7 +29,7 @@ export const CardServicesData = [
   {
     id:1,
     icon:<MdAddHomeWork />,
-    title:"Pública con nosotros",
+    title:"Publica con nosotros",
     button:true
   },
   {

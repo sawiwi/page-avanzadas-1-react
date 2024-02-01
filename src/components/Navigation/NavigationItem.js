@@ -60,7 +60,7 @@ const NavigationItem = ({ menuItem }) => {
       target={href === 'https://unne.prop360.cl/' ? '_blank' : '' || href === 'https://demo-landing-1.unne.cl/' ? 'blank' : ''}
       className={`${
         pathname === href
-          ? 'bg-secondary-700 text-primary inline-flex items-center text-sm xl:text-base font-normal py-2 px-4 xl:px-5 rounded-full font-customFont uppercase'
+          ? 'bg-secondary-700 text-primary inline-flex items-center text-sm xl:text-sm font-normal py-2 px-4 xl:px-5 rounded-full font-customFont uppercase'
           : name === 'Intranet'
           ? ' inline-flex items-center text-sm xl:text-sm font-normal py-2 px-4 xl:px-3 3xl:px-5 rounded-full text-secondary hover:text-primary hover:bg-secondary uppercase font-customFont'
           : 'inline-flex items-center text-sm xl:text-sm font-normal py-2 px-4 xl:px-3 3xl:px-5 rounded-full text-secondary hover:bg-secondary hover:text-primary-700 font-customFont uppercase'
