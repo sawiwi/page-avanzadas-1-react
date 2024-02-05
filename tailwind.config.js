@@ -26,19 +26,12 @@ module.exports = {
           customFont:['Work Sans', 'sans-serif']
       },
       colors: {
-        // primary: {
-        //   DEFAULT: '#bbffe4',
-        //   opacity: '#bbffe4d4',
-        //   ligth: '#bbffe5',
-        //   700: '#a0ffd9',
-        //   // 400: '#fb923C',
-        // },
           primary: {
             DEFAULT: '#ffffe5',
             opacity: '#ffffe5d4',
-            ligth: '#ffffe5',
+            ligth: '#ffffed',
             700: '#f2f2d6',
-            // 400: '#fb923C',
+         
           },
         secondary: {
           DEFAULT: '#614d19',
@@ -47,19 +40,9 @@ module.exports = {
           700: '#4e3e15',
           800:'#413312',
           grey: '#85795b'
-          // 300: '#FCD34D',
-          // 400: '#FACC15',
+    
         },
-        // secondary: {
-        //   DEFAULT: '#000018',
-        //   opacity: '#000018d4',
-        //   ligth: '#01014a',
-        //   700: '#000083',
-        //   800:'#000064',
-        //   grey: '#85795b'
-        //   // 300: '#FCD34D',
-        //   // 400: '#FACC15',
-        // },
+
       },
     },
   },

@@ -5,18 +5,23 @@
 
 .card {
   border-radius: 5px;
-  padding: 1.5rem;
+  padding: 2.5rem;
   background: white;
   position: relative;
   display: flex;
   margin: 0.5rem;
   align-items: flex-end;
   transition: 0.4s ease-out;
-  height: 150px;
+  height: 250px;
 }
 .card:hover {
   box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
 }
+
+.card:hover Button{
+  color: #614d19;
+}
+
 
 .card:hover:before {
   opacity: 1;
@@ -53,7 +58,7 @@
 .card .info {
   position: relative;
   z-index: 3;
-  color: white;
+  color: #614d19;
   opacity: 0;
   transform: translateY(30px);
   transition: 0.5s;

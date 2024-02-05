@@ -36,11 +36,11 @@ const PropertyComponent = ({ property }) => {
   );
 
   /** Render Property detail */
-  const renderContentPdf = () => (
-    <PDFViewer className="w-full h-[90vh]">
-      <PDFView property={property} />
-    </PDFViewer>
-  );
+  // const renderContentPdf = () => (
+  //   <PDFViewer className="w-full h-[90vh]">
+  //     <PDFView property={property} />
+  //   </PDFViewer>
+  // );
 
   useEffect(() => {
     if (Object.keys(property).length > 0) {
@@ -55,33 +55,27 @@ const PropertyComponent = ({ property }) => {
 
       {Object.keys(property).length > 0 && (
         <div className="my-10 px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mx-auto bg-red md:grid-cols-reverse">
-            <div className="sm:col-span-6 col-span-3 xl:col-span-3 bg-gray-50 max-h-auto order-2 xl:order-1">
-              <div className="flex justify-between items-center py-2.5 px-5 text-xs xl:text-sm text-gray-500">
+          <div className="grid grid-cols-1 xl:grid-cols-2  gap-4 mx-auto">
+            <div className="sm:col-span-6 col-span-3 xl:col-span-3  max-h-auto order-2 xl:order-1">
+              <Details property={property} />
+            </div>
+            <div className="sm:col-span-6 col-span-3 xl:col-span-3 shadow-lg max-h-auto order-2 xl:order-1">
+              <div className="flex justify-between items-center py-2.5 px-5 text-xs xl:text-sm text-secondary">
                 <TopInfoAddress property={property} />
                 <div className="flex flex-row">
                   <span
                     onClick={() => setShowModalShare(true)}
-                    className="flex items-center hover:text-primary cursor-pointer"
+                    className="flex items-center hover:text-secondary-opacity  cursor-pointer"
                   >
                     <FaShare className="mr-1" />
                     Compartir
-                  </span>
-                  <span className="mx-4 text-gray-200">|</span>
-                  <span
-                    onClick={() => setShowModalDetail(true)}
-                    className="flex items-center hover:text-primary cursor-pointer"
-                  >
-                    <MdSimCardDownload className="mr-1" />
-                    Descargar PDF
                   </span>
                 </div>
               </div>
               <GalleryCarousel items={property} />
               <Characteristics property={property} />
             </div>
-            <div className="sm:col-span-6 col-span-3 xl:col-span-1 bg-white h-auto order-1 xl:order-2">
-              <Details property={property} />
+            <div className="sm:col-span-6 col-span-3 xl:col-span-2 bg-secondary h-auto order-1 xl:order-2">
               <SimilarProyects property={property} />
             </div>
           </div>
@@ -103,16 +97,16 @@ const PropertyComponent = ({ property }) => {
               setShowModalShare(false);
             }}
           />
-          <Modal
+          {/* <Modal
             renderTrigger={() => null}
             isOpenProp={showModalDetail}
-            renderContent={renderContentPdf}
+            // renderContent={renderContentPdf}
             contentExtraClass="max-w-[90%]"
             modalTitle="Descargar PDF"
             onCloseModal={() => {
               setShowModalDetail(false);
             }}
-          />
+          /> */}
         </div>
       )}
     </Section>

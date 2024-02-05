@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 
 const Modal = ({
   renderTrigger,
-  renderContent,
+  // renderContent,
   contentExtraClass = 'max-w-screen-xl',
   contentPaddingClass = 'py-4 px-6 md:py-5 text-slate-800 bg-white',
   triggerText = 'Open Modal',
@@ -91,7 +91,7 @@ const Modal = ({
                     </Dialog.Title>
                   )}
                 </div>
-                <div className={contentPaddingClass}>{renderContent()}</div>
+                {/* <div className={contentPaddingClass}>{renderContent()}</div> */}
               </div>
             </Transition.Child>
           </div>

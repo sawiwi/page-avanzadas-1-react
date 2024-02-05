@@ -3,10 +3,10 @@
 }
 
 .scrollbarY::-webkit-scrollbar-track {
-  background: #e5e7eb !important;
+  background: #f2f2d6 !important;
 }
 
 .scrollbarY::-webkit-scrollbar-thumb {
-  background: #6b7280 !important;
+  background: #614d19 !important;
   border-radius: 1rem !important;
 }

@@ -45,14 +45,14 @@ const ReactMap = ({ longitudeProp, latitudeProp, property, props }) => {
   return (
     <div className="container my-24">
       <div>
-        <h3>
+        {/* <h3>
           <Link
             to={`/propiedades/propiedades-en-mapa`}
             className="flex w-full lg:w-2/6 xl:w-1/6 uppercase items-center justify-center rounded-lg py-2 text-lg font-medium text-center text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300"
           >
             <FaMapMarkerAlt className="mr-2" /> Ver mapa
           </Link>
-        </h3>
+        </h3> */}
 
         <h4 className="flex ml-2 xl:ml-5 items-center my-5 text-gray-600">
           <span>
@@ -62,10 +62,6 @@ const ReactMap = ({ longitudeProp, latitudeProp, property, props }) => {
           {property?.commune || 'Comuna no registrada'},{' '}
           {property?.city || 'Ciudad no registrada'}
         </h4>
-
-        <Link to="/" className="ml-2 xl:ml-5 text-blue-500 text-sm">
-          Ver información de la zona
-        </Link>
       </div>
 
       <Map

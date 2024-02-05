@@ -22,17 +22,19 @@ const SimilarProyects = ({ property }) => {
 
   return (
     <div
-      className={`${styles.scrollbarY} flex flex-col overflow-y-scroll max-h-[600px]`}
+      className={`${styles.scrollbarY} flex flex-col overflow-y-scroll max-h-[600px] `}
     >
-      <div className="p-2 my-2 border-b">
-        <h2>Proyectos similares</h2>
+      <div className="p-2 my-2 border-b border-primary">
+        <h2 className='text-primary xl:text-xl'>Proyectos similares</h2>
       </div>
-
-      {similarProperties?.length > 0 ? (
+    <div className='grid grid-cols-1  xl:grid-cols-3'>
+    {similarProperties?.length > 0 ? (
         renderedSimiliarProperties
       ) : (
-        <p className="p-2">Propiedades no encontradas</p>
+        <p className="p-2 text-primary">Propiedades no encontradas</p>
       )}
+    </div>
+
     </div>
   );
 };
