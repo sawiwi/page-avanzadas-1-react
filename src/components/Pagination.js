@@ -48,12 +48,12 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <React.Fragment>
-      <div className="absolute bottom-0 flex justify-center items-center w-[100%] xl:w-[80%] bg-gray-50 p-3">
+      <div className="absolute bottom-0 flex justify-center items-center w-[100%] xl:w-[80%] bg-primary p-3">
         <button
           onClick={handlePreviousPage}
           disabled={currentPage === 1}
           className={`${
-            currentPage === 1 ? 'bg-gray-100 text-gray-400' : 'bg-gray-200'
+            currentPage === 1 ? 'bg-secondary-opacity text-primary-opacity' : 'bg-secondary-700 text-primary'
           } p-3 border rounded-l-lg`}
         >
           Volver
@@ -64,8 +64,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             key={index}
             className={`${
               currentPage === pageNumber || pageNumber === '...'
-                ? 'bg-primary hover:bg-primary-opacity text-white active'
-                : 'bg-white text-black'
+                ? 'bg-secondary hover:bg-secondary-opacity text-primary hover:text-primary active'
+                : 'bg-primary text-secondary'
             } p-3 border`}
             disabled={currentPage === pageNumber || pageNumber === '...'}
             style={{
@@ -85,8 +85,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           disabled={currentPage === totalPages}
           className={`${
             currentPage === totalPages
-              ? 'bg-gray-100 text-gray-400'
-              : 'bg-gray-200'
+              ? 'bg-secondary-opacity text-primary'
+              : 'bg-secondary-700 text-primary'
           } p-3 border rounded-r-lg`}
         >
           Siguiente

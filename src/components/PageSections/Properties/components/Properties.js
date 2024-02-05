@@ -71,7 +71,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
           }}
         />
         <div className="flex flex-col-reverse md:flex-row">
-          <div className="w-full md:w-4/5 bg-white mb-48">
+          <div className="w-full md:w-4/5 bg-primary-700 mb-48">
             {/* PROPERTIES LIST */}
             {isLoading && <Spinner />}
             {notFoundMsg && <NotFound message={notFoundMsg} />}
@@ -100,18 +100,18 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
             </div>
           </div>
           {/* ADVANCED SEARCH FORM */}
-          <div className="w-full md:w-1/5 bg-white border ml-0 xl:ml-2">
+          <div className="w-full md:w-1/5 bg-secondary border ml-0 xl:ml-2">
             <button
               onClick={handleToggleForm}
               className="bg-gray-100 w-full mx-auto p-2 hover:bg-gray-200 border-b"
             >
               {isOpenForm ? (
-                <span className="flex items-center justify-center text-sm">
+                <span className="flex items-center justify-center text-sm text-secondary">
                   <MdOutlineFilterListOff className="pr-1 text-xl" />
                   Ocultar filtros
                 </span>
               ) : (
-                <span className="flex items-center justify-center text-sm">
+                <span className="flex items-center justify-center text-sm text-secondary">
                   <MdOutlineFilterList className="pr-1 text-xl" />
                   Mostrar filtros
                 </span>
@@ -120,7 +120,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
             {isOpenForm && <AdvancedSearch {...{ setProperties }} />}
 
             <div className="p-5 mb-20">
-              <h3 className="bg-gray-50 p-2 text-gray-800">
+              <h3 className="p-2 text-primary">
                 Proyectos destacados
               </h3>
 
@@ -129,7 +129,7 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
                   <Link
                     key={propiedad.id}
                     to={`/propiedades/${propiedad?.id}?statusId=${company.statusId}&companyId=${company.companyId}`}
-                    className={`${styles.link} relative h-[145px] text-white text-xs w-[45%] sm:w-[47.5%] lg:w-[45%] xl:w-[45%] m-1`}
+                    className={`${styles.link} relative h-[175px] text-primary text-xs w-[45%] sm:w-[47.5%] lg:w-[45%] xl:w-[45%] m-1`}
                   >
                     <img
                       src={
@@ -144,30 +144,30 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
                         width: '100%',
                       }}
                     />
-                    <p className={styles.deptName}>
+                    <p className={`${styles.deptName} text-secondary bg-primary-700`}>
                       {truncateStringSmall(
                         propiedad.title || 'Propiedad sin titulo registrado'
                       ) || ''}
                     </p>
-                    <span className="bg-primary mt-[40px] absolute p-[1.5px] px-3 -top-[25px] w-auto rounded-full">
+                    <span className="bg-secondary mt-[40px] absolute p-[1.5px] px-3 -top-[25px] w-auto rounded-full">
                       Cod: {propiedad.id}
                     </span>
                   </Link>
                 ))}
               </ul>
 
-              <div className="flex items-center bg-white mt-4">
-                <div className="flex-1 border-b bg-white border-gray-200"></div>
+              <div className="flex items-center bg-secondary mt-4">
+                <div className="flex-1 border-b bg-primary border-primary-ligth"></div>
                 <button onClick={showMoreProperties} className="relative">
                   {showMore && (
-                    <div className="h-11 w-11 rounded-full bg-white border border-gray-200 text-gray-400 hover:text-white hover:bg-primary cursor-pointer flex items-center justify-center">
+                    <div className="h-11 w-11 rounded-full bg-primary border border-secondary text-secondary hover:text-secondary-ligth hover:border-secondary-light  cursor-pointer flex items-center justify-center">
                       <RiArrowDownSLine className="text-2xl" />
                     </div>
                   )}
                 </button>
                 <button onClick={seeLessProperties} className="relative">
                   {!showMore && propertiesToShow.length >= 10 && (
-                    <div className="h-11 w-11 rounded-full bg-bg-transparent border border-gray-200 text-gray-400 hover:text-white hover:bg-primary cursor-pointer flex items-center justify-center">
+                    <div className="h-11 w-11 rounded-full bg-transparent border border-gray-200 text-primary hover:text-secondary hover:bg-primary cursor-pointer flex items-center justify-center">
                       <RiArrowDownSLine className="text-2xl rotate-180" />
                     </div>
                   )}

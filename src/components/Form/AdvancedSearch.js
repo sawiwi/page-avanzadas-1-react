@@ -212,8 +212,6 @@ const AdvancedSearch = ({ setProperties }) => {
     switch (pathname) {
       case '/propiedades':
         return 'hidden';
-      case '/soy-inversionista/unidades-nuevas':
-        return 'flex flex-col';
       default:
         return 'hidden';
     }
@@ -222,7 +220,7 @@ const AdvancedSearch = ({ setProperties }) => {
   return (
     <form onSubmit={handleSubmit} className="border-b p-5">
       <div className="flex flex-col mb-3">
-        <label className="mb-1 text-gray-500">Tipo de Operación</label>
+        <label className="mb-1 text-primary">Tipo de Operación</label>
         <select
           value={selectedSelects?.operationType}
           onChange={onOperationTypeChange}
@@ -238,7 +236,7 @@ const AdvancedSearch = ({ setProperties }) => {
       </div>
 
       <div className="flex flex-col mb-3">
-        <label className="mb-1 text-gray-500">Tipo de Propiedad</label>
+        <label className="mb-1 text-primary">Tipo de Propiedad</label>
         <select
           value={selectedSelects?.typeOfProperty}
           onChange={onTypeOfPropertyChange}
@@ -254,7 +252,7 @@ const AdvancedSearch = ({ setProperties }) => {
       </div>
 
       <div className={`${hideSelects(pathname)} mb-3`}>
-        <label className="mb-1 text-gray-500">Tipo de Instalación</label>
+        <label className="mb-1 text-primary">Tipo de Instalación</label>
         <select
           value={selectedSelects.installmentType}
           onChange={onInstallmentTypeChange}
@@ -270,7 +268,7 @@ const AdvancedSearch = ({ setProperties }) => {
       </div>
 
       <div className="flex flex-col mb-3">
-        <label className="mb-1 text-gray-500">Región</label>
+        <label className="mb-1 text-primary">Región</label>
         <select
           onChange={onRegionChange}
           className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
@@ -284,7 +282,7 @@ const AdvancedSearch = ({ setProperties }) => {
       </div>
 
       <div className="flex flex-col mb-3">
-        <label className="mb-1 text-gray-500">Comuna</label>
+        <label className="mb-1 text-primary">Comuna</label>
         <select
           onChange={onCommuneChange}
           className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
@@ -298,7 +296,7 @@ const AdvancedSearch = ({ setProperties }) => {
       </div>
 
       <div className="flex flex-col mb-3">
-        <label className="mb-1 text-gray-500">Metros cuadrados</label>
+        <label className="mb-1 text-primary">Metros cuadrados</label>
         <input
           type="text"
           value={selectedSelects.surfaceM2}
@@ -310,7 +308,7 @@ const AdvancedSearch = ({ setProperties }) => {
 
       <div className="flex flex-row justify-between items-center w-[100%] mb-3">
         <div className="w-[49%]">
-          <label className="mb-1 text-gray-500">P. mínimo</label>
+          <label className="mb-1 text-primary">P. mínimo</label>
           <input
             type="text"
             value={selectedSelects.minPrice}
@@ -320,7 +318,7 @@ const AdvancedSearch = ({ setProperties }) => {
         </div>
 
         <div className="w-[49%]">
-          <label className="mb-1 text-gray-500">P. máximo</label>
+          <label className="mb-1 text-primary">P. máximo</label>
           <input
             type="text"
             value={selectedSelects.maxPrice}
@@ -331,7 +329,7 @@ const AdvancedSearch = ({ setProperties }) => {
       </div>
 
       <div className="flex flex-col mb-3">
-        <label className="mb-1 text-gray-500">Dormitorios</label>
+        <label className="mb-1 text-primary">Dormitorios</label>
         <select
           value={selectedSelects?.bedrooms}
           onChange={onBedroomChange}
@@ -347,7 +345,7 @@ const AdvancedSearch = ({ setProperties }) => {
       </div>
 
       <div className="flex flex-col mb-3">
-        <label className="mb-1 text-gray-500">Baños</label>
+        <label className="mb-1 text-primary">Baños</label>
         <select
           value={selectedSelects?.bathrooms}
           onChange={onBathroomChange}
@@ -363,7 +361,7 @@ const AdvancedSearch = ({ setProperties }) => {
       </div>
 
       <div className="flex flex-col mb-3">
-        <label className="mb-1 text-gray-500">Estacionamientos</label>
+        <label className="mb-1 text-primary">Estacionamientos</label>
         <select
           value={selectedSelects?.coveredParkingLots}
           onChange={onCoveredParkingLotChange}
@@ -380,14 +378,14 @@ const AdvancedSearch = ({ setProperties }) => {
 
       <Button
         type="submit"
-        className="block w-full p-2 my-1 uppercase font-semibold text-sm rounded-full hover:shadow-sm transition ease-in-out duration-300 text-white bg-primary hover:bg-primary-opacity"
+        className="block w-full p-2 my-2 uppercase font-semibold text-sm rounded-full hover:shadow-sm transition ease-in-out duration-300 text-secondary bg-primary hover:bg-primary-ligth"
       >
         {isLoading ? 'Buscando...' : 'Buscar'}
       </Button>
 
       <Button
         onClick={resetForm}
-        className="block w-full p-2 my-1 text-sm rounded-full hover:shadow-sm transition ease-in-out duration-300 text-white bg-gray-500 hover:bg-gray-600"
+        className="block w-full p-2 my-1 text-sm rounded-full hover:shadow-sm transition ease-in-out duration-300 text-primary bg-secondary-800 hover:bg-secondary-700"
       >
         Limpiar
       </Button>
