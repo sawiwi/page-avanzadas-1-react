@@ -27,7 +27,7 @@ const AboutInfo = () => {
       />
       <div className="container">
         <div className="grid grid-cols-1 xl:grid-cols-4 items-center w-full pb-5 xl:m-2 px-6 xl:px-44">
-            <div className="xl:cols-span-1 w-full xl:w-80  xl:min-h-[15.5rem] m-2 xl:m-6">
+            <div className="xl:cols-span-1 w-full xl:w-64 3xl:w-80 xl:min-h-[15.5rem] m-2 xl:m-6">
               <div className="items-center text-start">
                 <div>
                   <h2 className=" text-secondary-800 text-xl">Misión</h2>
@@ -41,7 +41,7 @@ const AboutInfo = () => {
               </div>
             </div>
 
-            <div className="xl:cols-span-1 w-full xl:w-80 xl:min-h-[15.5rem] m-2 xl:m-6">
+            <div className="xl:cols-span-1 w-full xl:w-64 3xl:w-80 xl:min-h-[15.5rem] m-2 xl:m-6">
               <div className=" items-center text-start">
                 <div>
                   <h2 className=" text-secondary-800 text-xl">Visión</h2>

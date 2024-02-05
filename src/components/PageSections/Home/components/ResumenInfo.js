@@ -18,7 +18,7 @@ const ResumeInfoAbout = ()=>{
                 </div>
                 <div className="text-center text-secondary-700 mb-6 xl:mb-16">
                     <h3 className="text-4xl">34</h3>
-                    <p>Propiedades arrendadass</p>
+                    <p>Propiedades arrendadas</p>
                 </div>
           </div>
         </div>

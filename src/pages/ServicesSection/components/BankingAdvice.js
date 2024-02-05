@@ -5,8 +5,8 @@ const BankingAdvice = ()=>{
 return(
     <div className="grid  grid-cols-1 xl:grid-cols-2 xl:m-2 mt-8">
         <div className="col-span-1">
-            <div className="bg-secondary w-[22rem] 3xl:w-[100%] xl:min-h-[40vh] 3xl:min-h-[70vh] xl:p-5 3xl:p-16">
-                <p className="p-3 pt-4 pb-9 text-lg xl:text-md 3xl:text-lg font-normal text-start text-primary 3xl:mt-16 ">
+            <div className="bg-secondary w-[22rem] xl:w-[595px] 3xl:w-[100%] xl:min-h-[100%] 3xl:min-h-[100%] xl:p-5 3xl:p-16">
+                <p className="p-3 pt-4 pb-9 text-lg xl:mt-20 xl:text-md 3xl:text-lg font-normal text-start text-primary 3xl:mt-16 ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam facilis fugiat, tenetur eius rem, architecto esse perspiciatis aperiam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe numquam amet doloremque repellendus, culpa accusantium nobis ducimus ipsam impedit praesentium accusamus enim minus sequi pariatur in soluta nam, est ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam facilis fugiat, tenetur eius rem, architecto esse perspiciatis aperiam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe numquam amet doloremque repellendus, culpa accusantium nobis ducimus ipsam impedit praesentium accusamus enim minus sequi pariatur in soluta nam, est ab.
                 </p>
             </div>
