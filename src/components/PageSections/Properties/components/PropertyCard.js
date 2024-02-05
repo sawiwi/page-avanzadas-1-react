@@ -9,7 +9,7 @@ import { company } from '../../../../constants/consts/company';
 import { iconsList } from '../../../Icons';
 
 const PropertyCard = ({ data, isList }) => {
-  const { id, title, image, address, commune, city, price, types } = data;
+  const { id, title, image, address, commune, city, price, types , operation} = data;
   const { BiMap } = iconsList;
 
   // Validador de extension .jpg / .png/ .jpeg  para las imgs
@@ -50,7 +50,7 @@ const PropertyCard = ({ data, isList }) => {
     <div
       className={`${
         isList
-          ? 'flex flex-col items-centerborder border-primary-700 bg-primary hover:shadow-xl md:flex-row'
+          ? 'flex flex-col items-centerborder border-primary-700 bg-primary hover:shadow-xl md:flex-row '
           : 'w-full'
       } border rounded-xl hover:cursor-pointer hover:shadow-xl bg-primary transition duration-300 ease-in-out `}
     >
@@ -68,8 +68,11 @@ const PropertyCard = ({ data, isList }) => {
         {/* Declaramos la validación de imagen */}
         {validaImage(image)}
 
-      <div className="p-3">
-        <span className="uppercase text-secondary">Cod: {id}</span>
+      <div className="p-3 w-full 3xl:w-full">
+        <p className={`${isList ? 'flex justify-between items-center mb-2 font-extralight text-sm bg-primary  rounded-sm text-secondary' : 'flex justify-between items-center mb-2 font-extralight text-sm bg-primary rounded-sm text-secondary'}`}>
+            <span className="mr-1 text-secondary">{types?.[0]} en {!operation ? "Sin tipo de operación": operation}</span>{' '}
+            <span className="uppercase text-secondary">Cod: {id}</span>
+          </p>
         <h5 className="mb-2 h-18 text-md font-light xl:text-md text-secondary-800">
           {truncateString(title ?? 'Titulo de propiedad no registrado', 70)}
         </h5>
@@ -84,16 +87,14 @@ const PropertyCard = ({ data, isList }) => {
         </p>
 
         {data?.currency?.name === 'UF' && data?.currency?.isoCode === 'UF' && (
-          <p className="flex justify-end items-center mb-3 font-normal bg-primary border-l-2 border-primary-400 p-1 rounded-sm text-secondary">
-            <span className="mr-1 text-secondary">{types?.[0]}: </span>{' '}
+          <p className="flex justify-end items-center mb-3 font-normal bg-primary p-1 rounded-sm text-secondary">
             {parseToDecimal(price || 0)} UF
           </p>
         )}
 
         {data?.currency?.name === 'Peso Chileno' &&
           data?.currency?.isoCode === 'CLP' && (
-            <p className="flex justify-end items-center mb-3 font-normal bg-primary border-l-2 border-primary-400 p-1 rounded-sm text-secondary">
-              <span className="mr-1 text-secondary">{types?.[0]}:</span>
+            <p className="flex justify-end items-center mb-3 font-normal bg-primary p-1 rounded-sm text-secondary">
               {parseToCLPCurrency(price)} CLP
             </p>
           )}

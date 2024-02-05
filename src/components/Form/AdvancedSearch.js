@@ -224,7 +224,7 @@ const AdvancedSearch = ({ setProperties }) => {
         <select
           value={selectedSelects?.operationType}
           onChange={onOperationTypeChange}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
         >
           <option value="">Seleccione...</option>
           {operationType.map((option) => (
@@ -240,7 +240,7 @@ const AdvancedSearch = ({ setProperties }) => {
         <select
           value={selectedSelects?.typeOfProperty}
           onChange={onTypeOfPropertyChange}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
         >
           <option value="">Seleccione...</option>
           {typeOfProperty.map((option) => (
@@ -256,7 +256,7 @@ const AdvancedSearch = ({ setProperties }) => {
         <select
           value={selectedSelects.installmentType}
           onChange={onInstallmentTypeChange}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
         >
           <option value="">Seleccione...</option>
           {installmentType.map((option) => (
@@ -271,7 +271,7 @@ const AdvancedSearch = ({ setProperties }) => {
         <label className="mb-1 text-primary">Región</label>
         <select
           onChange={onRegionChange}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
         >
           {regions.map((region) => (
             <option key={region.id} value={region.id}>
@@ -285,7 +285,7 @@ const AdvancedSearch = ({ setProperties }) => {
         <label className="mb-1 text-primary">Comuna</label>
         <select
           onChange={onCommuneChange}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
         >
           {communes.map((region) => (
             <option key={region.id} value={region.name}>
@@ -301,29 +301,29 @@ const AdvancedSearch = ({ setProperties }) => {
           type="text"
           value={selectedSelects.surfaceM2}
           onChange={onSurfaceM2Change}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
           placeholder="Ej: 500"
         />
       </div>
 
       <div className="flex flex-row justify-between items-center w-[100%] mb-3">
         <div className="w-[49%]">
-          <label className="mb-1 text-primary">P. mínimo</label>
+          <label className="mb-1 text-primary">Precio min.</label>
           <input
             type="text"
             value={selectedSelects.minPrice}
             onChange={onMinPriceChange}
-            className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+            className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full text-secondary"
           />
         </div>
 
         <div className="w-[49%]">
-          <label className="mb-1 text-primary">P. máximo</label>
+          <label className="mb-1 text-primary">Precio max.</label>
           <input
             type="text"
             value={selectedSelects.maxPrice}
             onChange={onMaxPriceChange}
-            className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+            className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
           />
         </div>
       </div>
@@ -333,7 +333,7 @@ const AdvancedSearch = ({ setProperties }) => {
         <select
           value={selectedSelects?.bedrooms}
           onChange={onBedroomChange}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
         >
           <option value="">Seleccione...</option>
           {bedroomsOptions.map((option) => (
@@ -349,11 +349,11 @@ const AdvancedSearch = ({ setProperties }) => {
         <select
           value={selectedSelects?.bathrooms}
           onChange={onBathroomChange}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
         >
-          <option value="">Seleccione...</option>
+          <option value="" className='text-secondary'>Seleccione...</option>
           {bathroomsOptions.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option key={option.value} value={option.value} className='text-secondary'>
               {option.label}
             </option>
           ))}
@@ -365,11 +365,11 @@ const AdvancedSearch = ({ setProperties }) => {
         <select
           value={selectedSelects?.coveredParkingLots}
           onChange={onCoveredParkingLotChange}
-          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%]"
+          className="p-2 border outline-none focus:outline-none bg-white border-gray-200 w-[100%] rounded-full"
         >
-          <option value="">Seleccione...</option>
+          <option value="" className='text-secondary'>Seleccione...</option>
           {coveredParkingLotsOptions.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option key={option.value} value={option.value} className='text-secondary'>
               {option.label}
             </option>
           ))}
