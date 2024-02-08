@@ -14,10 +14,10 @@ import { parseToCLPCurrency, parseToDecimal } from '../../../utils';
 
 const PropertiesInMapComponent = () => {
   const { contextData } = useContext(PropertiesContext);
-  const { propertiesInMap } = contextData;
+  const { propertiesInMap, totalItems } = contextData;
   const [selectedProperty, setSelectedProperty] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [totalItems, setTotalItems] = useState('');
+  // const [totalItems, setTotalItems] = useState('');
 
   useEffect(() => {
     if (propertiesInMap.length > 0) {
@@ -40,8 +40,9 @@ const PropertiesInMapComponent = () => {
             Descubre propiedades es una forma fácil y eficiente de encontrar y
             explorar propiedades en una ubicación específica
           </p>
-          <p className="text-primary text-sm">Propiedades activas en mapa</p>
         </div>
+        
+        <p className="text-secondary text-sm"><b>{totalItems} Propiedades</b> activas en mapa </p>
 
         <div>
           <Map
@@ -68,6 +69,39 @@ const PropertiesInMapComponent = () => {
             }}
           >
             {propertiesInMap?.map((property) => {
+
+              // console.log(property?.image)
+              const image = property?.image
+              // Validador de extension .jpg / .png/ .jpeg  para las imgs
+              const validaImage = (image) => {
+                if (image) {
+                  const validExtensions = ['.jpg', '.jpeg', '.png'];
+              
+                  if (validExtensions.some(ext => image.toLowerCase().endsWith(ext))) {
+                    return (
+                          <img
+                            className="rounded-t-lg"
+                            src={image}
+                            alt={`small-card-${property?.title}`}
+                            style={{
+                              height: '30px',
+                            }}
+                          />
+                    );
+                  }
+                }
+                return (
+                  <img
+                    className="rounded-t-lg"
+                    src={`https://res.cloudinary.com/dbrhjc4o5/image/upload/v1681933697/unne-media/errors/not-found-img_pp5xj7.jpg`}
+                    alt={`small-card-${property?.title}`}
+                    style={{
+                      height: '30px',
+                    }}
+                  />
+                );
+              };
+
               let longitude =
                 Number(property?.LngLat?.match(/Lng: ([-\d.]+)/)[1]) ||
                 -70.64827;
@@ -127,14 +161,8 @@ const PropertiesInMapComponent = () => {
                             }?statusId=${1}&companyId=${15}`}
                           >
                             <div className="max-w-sm bg-white">
-                              <img
-                                className="rounded-t-lg"
-                                src={`https://aulen.partnersadvisers.info/properties/secure-imgs/Imagenes//${property?.id}//1.jpg`}
-                                alt={`small-card-${property?.title}`}
-                                style={{
-                                  height: '30px',
-                                }}
-                              />
+                                {/* Declaramos la validación de imagen */}
+                                {validaImage(image)}
 
                               <div>
                                 <span className="bg-secondary text-primary px-2 py-.5 mt-1 rounded-full">
@@ -158,7 +186,7 @@ const PropertiesInMapComponent = () => {
 
                                 {property?.currency?.name === 'Peso Chileno' &&
                                   property?.currency?.isoCode === 'CLP' && (
-                                    <p className="flex justify-end items-center mb-3 font-normal bg-primary border-l-2 border-primary-400 p-1 rounded-sm text-secondary">
+                                    <p className="flex justify-end items-center mb-3 font-normal bg-white border-l-2 border-primary-400 p-1 rounded-sm text-secondary">
                                       <span className="mr-1">Desde:</span>
                                       {parseToCLPCurrency(
                                         property?.price ?? 0

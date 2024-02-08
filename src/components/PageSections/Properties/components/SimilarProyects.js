@@ -29,15 +29,13 @@ const SimilarProyects = ({ property }) => {
       <div className="p-2 my-2">
         <h2 className='text-secondary xl:text-2xl'>Proyectos similares</h2>
       </div>
-    <div className='grid grid-cols-1  xl:grid-cols-2'>
-      <div className='col-span-1'>
-       
+    <div className='grid '>
         {similarProperties?.length > 0 ? (
             renderedSimiliarProperties
           ) : (
             <p className="p-2 text-secondary">Propiedades no encontradas</p>
           )}
-      </div>
+      
     </div>
          
 

@@ -33,9 +33,9 @@ const PropertiesTop = ({
   return (
     <div className=" py-5 px-3  mb-4  w-full">
         <div className="flex justify-start items-center">
-          <span className=' h-8 mr-2'>
+          <span className=' h-10 mr-2 border-l-4 border-secondary'>
           </span>
-            <h1 className="text-2xl xl:text-4xl font-ligth  text-secondary-700">
+            <h1 className="text-2xl xl:text-3xl font-ligth  text-secondary-700 uppercase ">
               {getTitle(pathname)}
             </h1>
         </div>

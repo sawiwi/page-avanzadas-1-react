@@ -54,16 +54,7 @@ const PropertyCard = ({ data, isList }) => {
           : 'w-full'
       } border rounded-xl hover:cursor-pointer hover:shadow-xl bg-primary-700 ease-in-out hover:scale-105 transition-all duration-300`}
     >
-      {/* <img
-        className={`${
-          isList
-            ? 'h-[250px] w-[100%] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
-            : 'rounded-t-xl'
-        } h-64 xl:h-64 w-[100%] object-cover`}
-        src={`https://pages-api.panal.house/images/${id}/1.jpg`}
-        alt={`top-img-${title}`}
-        width="full"
-      /> */}
+
 
         {/* Declaramos la validación de imagen */}
         {validaImage(image)}

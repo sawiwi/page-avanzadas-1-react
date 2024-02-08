@@ -7,7 +7,7 @@ import { truncateStringSmall } from '../../../../utils';
 const SimilarPropertyCard = ({ property }) => {
   const navigate = useNavigate();
 
-console.log(property)
+// console.log(property)
 
   const handleIdChange = (newId) => {
     navigate(
@@ -18,7 +18,7 @@ console.log(property)
 
   return (
     <>
-      <div className={`${styles.wrapper} flex flex-col xl:grid grid-cols-3`}>
+      <div className={`${styles.wrapper} flex flex-col`}>
         <div className={styles.card}>
           <img
             src={
@@ -47,27 +47,6 @@ console.log(property)
           </div>
         </div>
       </div>
-{/*  
-    <div className='2xl:h-40'>
-        <div className={`flex flex-col max-h-[600px] `}>
-            <div className="p-2 my-2">
-              <h2 className='text-primary xl:text-xl'>Información del corredor</h2>
-            </div>
-          <div className='grid grid-cols-1 xl:flex xl:justify-center'>
-            <ul className='grid xl:flex xl:justify-between  text-primary xl:gap-4'>
-                <li>
-                  <b>Agente</b><p className="p-2 text-primary">{property?.realtor.name}</p>
-                </li>
-                <li>
-                  <b>Correo</b><p className="p-2 text-primary">{property?.realtor.mail}</p>
-                </li>
-                <li>
-                  <b>Celular</b><p className="p-2 text-primary">{property?.realtor.phone || '+56 2 6469 1800' }</p>
-                </li>    
-            </ul>
-          </div>
-        </div>
-      </div> */}
     </>
 
   );
