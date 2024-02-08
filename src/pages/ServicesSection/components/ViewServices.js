@@ -8,7 +8,12 @@ import BankingAdvice from "./BankingAdvice";
 
 const ViewServices = () =>{
 
+    const [showForm, setShowForm] = useState(false);
 
+    const toggleForm = () => {
+        setShowForm(!showForm);
+    }
+    
     return (
         <Section>
              <div className="container px-8 3xl:px-24"> 
@@ -27,10 +32,10 @@ const ViewServices = () =>{
                                     <h2 className="text-primary text-center text-xl">{item.title}</h2>
                                 </div>
                                 <div className="card-body">
-                                    { item.button ? <button className="bg-primary text-secondary-800 p-2 text-base font-medium rounded-md">
+                                    { item.button ? <button  onClick={toggleForm} className="bg-primary text-secondary-800 p-2 text-base font-medium rounded-md">
                                                     Completar formulario
                                             </button> : 
-                                            <button className="bg-primary text-secondary-800 p-2 text-base font-medium rounded-md">
+                                            <button onClick={toggleForm} className="bg-primary text-secondary-800 p-2 text-base font-medium rounded-md">
                                                 Ver más
                                             </button>}
                                   
@@ -41,12 +46,14 @@ const ViewServices = () =>{
                     }):''
                 }
                 </div>
-                <Fade delay={300} direction="right" triggerOnce={true}>
-                    <ViewPublicWithUs/>
-                </Fade>
-                <Fade delay={300} direction="left" triggerOnce={true}>
-                    <BankingAdvice/>
-                </Fade>
+                {showForm ? ( 
+                        <Fade delay={300} direction="right" triggerOnce={true}>
+                           <ViewPublicWithUs/>
+                       </Fade>
+                ):<Fade delay={300} direction="left" triggerOnce={true}>
+                        <BankingAdvice/>
+                    </Fade>}
+        
              </div>
         </Section>
     )
