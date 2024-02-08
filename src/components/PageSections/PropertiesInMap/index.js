@@ -29,12 +29,12 @@ const PropertiesInMapComponent = () => {
     <Section>
       <div className="container">
         <div className="mb-10">
-          <h1 className="text-xl">Localización de Propiedades </h1>{' '}
-          <p
+          <h1 className="text-xl text-secondary">Localización de Propiedades </h1>{' '}
+          <p className='text-secondary'
             style={{
               fontSize: '1rem',
               fontWeight: '300',
-              color: '#616161',
+          
             }}
           >
             Descubre propiedades es una forma fácil y eficiente de encontrar y
@@ -137,7 +137,7 @@ const PropertiesInMapComponent = () => {
                               />
 
                               <div>
-                                <span className="bg-primary text-white px-2 py-.5 mt-1 rounded-full">
+                                <span className="bg-secondary text-primary px-2 py-.5 mt-1 rounded-full">
                                   {property?.types?.[0] ?? 'Propiedad'}
                                 </span>
                                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -150,7 +150,7 @@ const PropertiesInMapComponent = () => {
 
                                 {property?.currency?.name === 'UF' &&
                                   property?.currency?.isoCode === 'UF' && (
-                                    <p className="flex justify-end items-center mb-3 font-normal bg-slate-50 border-l-2 border-primary-400 p-1 rounded-sm text-primary">
+                                    <p className="flex justify-end items-center mb-3 font-normal bg-primary-50 border-l-2 border-primary-400 p-1 rounded-sm text-secondary">
                                       <span className="mr-1">Desde:</span>
                                       {parseToDecimal(property?.price ?? 0)} UF
                                     </p>
@@ -158,7 +158,7 @@ const PropertiesInMapComponent = () => {
 
                                 {property?.currency?.name === 'Peso Chileno' &&
                                   property?.currency?.isoCode === 'CLP' && (
-                                    <p className="flex justify-end items-center mb-3 font-normal bg-slate-50 border-l-2 border-primary-400 p-1 rounded-sm text-primary">
+                                    <p className="flex justify-end items-center mb-3 font-normal bg-primary border-l-2 border-primary-400 p-1 rounded-sm text-secondary">
                                       <span className="mr-1">Desde:</span>
                                       {parseToCLPCurrency(
                                         property?.price ?? 0
