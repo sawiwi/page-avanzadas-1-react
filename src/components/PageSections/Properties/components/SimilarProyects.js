@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { PropertiesContext } from '../../../../context/properties/PropertiesContext';
 import SimilarPropertyCard from './SimilarPropertyCard';
 import styles from '../../../../styles/components/Scrollbar/Scrollbar.module.css';
+// import Button from '../../../Button/Button';
+
 
 const SimilarProyects = ({ property }) => {
   const { contextData } = useContext(PropertiesContext);
@@ -22,18 +24,24 @@ const SimilarProyects = ({ property }) => {
 
   return (
     <div
-      className={`${styles.scrollbarY} flex flex-col overflow-y-scroll max-h-[600px] `}
+      className={`${styles.scrollbarY} flex flex-col overflow-y-scroll max-h-[600px] 2xl:h-[400px] `}
     >
-      <div className="p-2 my-2 border-b border-primary">
-        <h2 className='text-primary xl:text-xl'>Proyectos similares</h2>
+      <div className="p-2 my-2">
+        <h2 className='text-secondary xl:text-2xl'>Proyectos similares</h2>
       </div>
-    <div className='grid grid-cols-1  xl:grid-cols-3'>
-    {similarProperties?.length > 0 ? (
-        renderedSimiliarProperties
-      ) : (
-        <p className="p-2 text-primary">Propiedades no encontradas</p>
-      )}
+    <div className='grid grid-cols-1  xl:grid-cols-2'>
+      <div className='col-span-1'>
+       
+        {similarProperties?.length > 0 ? (
+            renderedSimiliarProperties
+          ) : (
+            <p className="p-2 text-secondary">Propiedades no encontradas</p>
+          )}
+      </div>
     </div>
+         
+
+
 
     </div>
   );

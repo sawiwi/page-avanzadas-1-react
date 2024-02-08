@@ -7,6 +7,8 @@ import { truncateStringSmall } from '../../../../utils';
 const SimilarPropertyCard = ({ property }) => {
   const navigate = useNavigate();
 
+console.log(property)
+
   const handleIdChange = (newId) => {
     navigate(
       `/propiedades/${newId}?statusId=${company.statusId}&companyId=${company.companyId}`
@@ -15,35 +17,59 @@ const SimilarPropertyCard = ({ property }) => {
   };
 
   return (
-    <div className={`${styles.wrapper} flex flex-col xl:grid grid-cols-3`}>
-      <div className={styles.card}>
-        <img
-          src={
-            `https://accion.panal.house/images/${property?.id}//1.jpg` ??
-            `https://accion.panal.house/images/${property?.id}//2.jpg` ??
-            `https://accion.panal.house/images/${property?.id}//3.jpg`
-          }
-        />
+    <>
+      <div className={`${styles.wrapper} flex flex-col xl:grid grid-cols-3`}>
+        <div className={styles.card}>
+          <img
+            src={
+              `https://accion.panal.house/images/${property?.id}//1.jpg` ??
+              `https://accion.panal.house/images/${property?.id}//2.jpg` ??
+              `https://accion.panal.house/images/${property?.id}//3.jpg`
+            }
+          />
 
-        <div className={styles.info}>
-          <h3 className="uppercase rounded-sm text-primary">
-            Cod: {property?.id}
-          </h3>
-          <p className="text-primary text-sm font-bold">
-            {truncateStringSmall(property?.title)}
-          </p>
+          <div className={styles.info}>
+            <h3 className="uppercase rounded-sm text-primary">
+              Cod: {property?.id}
+            </h3>
+            <p className="text-primary text-sm font-bold mb-3">
+              {truncateStringSmall(property?.title)}
+            </p>
 
-          <Button
-            onClick={() => {
-              handleIdChange(property?.id);
-            }}
-            className="bg-primary w-100 px-3 my-1 py-1 hover:text-secondary hover:bg-primary-opacity lowercase"
-          >
-            Ver detalles
-          </Button>
+            <Button
+              onClick={() => {
+                handleIdChange(property?.id);
+              }}
+              className="bg-primary w-100 px-3 my-1 py-1 hover:text-secondary hover:bg-primary-opacity "
+            >
+              Ver Detalles
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+{/*  
+    <div className='2xl:h-40'>
+        <div className={`flex flex-col max-h-[600px] `}>
+            <div className="p-2 my-2">
+              <h2 className='text-primary xl:text-xl'>Información del corredor</h2>
+            </div>
+          <div className='grid grid-cols-1 xl:flex xl:justify-center'>
+            <ul className='grid xl:flex xl:justify-between  text-primary xl:gap-4'>
+                <li>
+                  <b>Agente</b><p className="p-2 text-primary">{property?.realtor.name}</p>
+                </li>
+                <li>
+                  <b>Correo</b><p className="p-2 text-primary">{property?.realtor.mail}</p>
+                </li>
+                <li>
+                  <b>Celular</b><p className="p-2 text-primary">{property?.realtor.phone || '+56 2 6469 1800' }</p>
+                </li>    
+            </ul>
+          </div>
+        </div>
+      </div> */}
+    </>
+
   );
 };
 

@@ -22,7 +22,7 @@ const PropertyCard = ({ data, isList }) => {
           <img
             className={`${
               isList
-                ? 'h-[299px] w-[100%] md:w-[400px] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none'
+                ? 'h-[299px] w-[100%] md:w-[400px] xl:w-[400px] object-cover rounded-t-xl xl:rounded-none '
                 : 'rounded-t-xl'
             }  object-cover h-[299px] w-full`}
             src={image}
@@ -52,7 +52,7 @@ const PropertyCard = ({ data, isList }) => {
         isList
           ? 'flex flex-col items-centerborder border-primary-700 bg-primary hover:shadow-xl md:flex-row '
           : 'w-full'
-      } border rounded-xl hover:cursor-pointer hover:shadow-xl bg-primary transition duration-300 ease-in-out `}
+      } border rounded-xl hover:cursor-pointer hover:shadow-xl bg-primary-700 ease-in-out hover:scale-105 transition-all duration-300`}
     >
       {/* <img
         className={`${
@@ -69,7 +69,7 @@ const PropertyCard = ({ data, isList }) => {
         {validaImage(image)}
 
       <div className="p-3 w-full 3xl:w-full">
-        <p className={`${isList ? 'flex justify-between items-center mb-2 font-extralight text-sm bg-primary  rounded-sm text-secondary' : 'flex justify-between items-center mb-2 font-extralight text-sm bg-primary rounded-sm text-secondary'}`}>
+        <p className={`${isList ? 'flex justify-between items-center mb-2 font-extralight text-sm bg-primary-700  rounded-sm text-secondary' : 'flex justify-between items-center mb-2 font-extralight text-sm bg-primary-700  rounded-sm text-secondary'}`}>
             <span className="mr-1 text-secondary">{types?.[0]} en {!operation ? "Sin tipo de operación": operation}</span>{' '}
             <span className="uppercase text-secondary">Cod: {id}</span>
           </p>
@@ -87,15 +87,20 @@ const PropertyCard = ({ data, isList }) => {
         </p>
 
         {data?.currency?.name === 'UF' && data?.currency?.isoCode === 'UF' && (
-          <p className="flex justify-end items-center mb-3 font-normal bg-primary p-1 rounded-sm text-secondary">
+          <p className="flex justify-end items-center mb-3 font-normal bg-primary-700 p-1 rounded-sm text-secondary"><b>
             {parseToDecimal(price || 0)} UF
+          </b>
+            
           </p>
         )}
 
         {data?.currency?.name === 'Peso Chileno' &&
           data?.currency?.isoCode === 'CLP' && (
-            <p className="flex justify-end items-center mb-3 font-normal bg-primary p-1 rounded-sm text-secondary">
+            <p className="flex justify-end items-center mb-3 font-normal bg-primary-700 p-1 rounded-sm text-secondary">
+              <b>
               {parseToCLPCurrency(price)} CLP
+              </b>
+              
             </p>
           )}
 

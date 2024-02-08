@@ -71,14 +71,14 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
           }}
         />
         <div className="flex flex-col-reverse md:flex-row">
-          <div className="w-full md:w-4/5 bg-primary-700 mb-48">
+          <div className="w-full md:w-4/5  mb-48">
             {/* PROPERTIES LIST */}
             {isLoading && <Spinner />}
             {notFoundMsg && <NotFound message={notFoundMsg} />}
             <ul
               className={`${
                 isGrid
-                  ? 'grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 p-2'
+                  ? 'grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 p-2 '
                   : 'flex flex-col gap-3'
               }`}
             >
@@ -103,15 +103,15 @@ const Properties = ({ isGrid, isList, setIsGrid, setIsList }) => {
           <div className="w-full md:w-1/5 bg-secondary border ml-0 xl:ml-2">
             <button
               onClick={handleToggleForm}
-              className="bg-gray-100 w-full mx-auto p-2 hover:bg-gray-200 border-b"
+              className="bg-secondary/75 w-full mx-auto  p-2 hover:bg-secondary border-b"
             >
               {isOpenForm ? (
-                <span className="flex items-center justify-center text-sm text-secondary">
+                <span className="flex items-center justify-center text-sm text-primary-700">
                   <MdOutlineFilterListOff className="pr-1 text-xl" />
                   Ocultar filtros
                 </span>
               ) : (
-                <span className="flex items-center justify-center text-sm text-secondary">
+                <span className="flex items-center justify-center text-sm text-primary-700">
                   <MdOutlineFilterList className="pr-1 text-xl" />
                   Mostrar filtros
                 </span>
