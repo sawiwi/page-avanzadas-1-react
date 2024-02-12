@@ -21,7 +21,7 @@ return(
                 </div> */}
             </div>
             <div className="3xl:right-0 flex items-center w-[360px] 3xl:w-[720px] pl-2 h-[21rem] xl:h-[17rem]">
-                <div className="absolute top-[48%] xl:top-0 xl:right-0  3xl:top-0  flex flex-col mr-2  border-primary hover:backdrop-blur-sm duration-150 bg-secondary-grey/30 px-10 xl:w-[49.3%] xl:h-[100%]">
+                <div className="absolute top-[48%] xl:top-0 xl:right-0  3xl:top-0  flex flex-col mr-2  border-primary hover:backdrop-blur-sm duration-150 bg-secondary-grey/30 px-10 xl:w-[49.4%] xl:h-[100%]">
                     <h2 className=" text-2xl mt-32 font-bold xl:text-3xl 3xl:text-4xl uppercase pb-2 mb-2 mr-2 text-primary drop-shadow-lg">
                         Asesoria Bancaria
                     </h2>

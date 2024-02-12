@@ -66,6 +66,42 @@ const ContactFormServices = {
   //   return response.data;
   // },
 
+  sendFormServices: async (
+  from,
+  // operationType,
+  typeProperty,
+  fullName,
+  email,
+  phone,
+  region,
+  realtorEmail
+  ) =>{
+    const response = await axios.post(
+      `https://formsubmit.co/ajax/${realtorEmail}`,
+      {
+        Desde: from,
+        // Tipo_de_operación:operationType,
+        Tipo_de_Propiedade: typeProperty,
+        Nombre: fullName,
+        Correo: email,
+        Teléfono:phone,
+        Region: region,
+        realtorEmail,
+        '_subject': 'De: Servicios / Mi Página web'
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      }
+    )
+    console.log('formSubmit: '+response.data)
+
+    return response.data;
+
+  },
+
   sendContactForm: async (
     from, 
     name, 
@@ -95,7 +131,6 @@ const ContactFormServices = {
       }
 
     );
-    console.log(response.data)
     return response.data;
   },
 

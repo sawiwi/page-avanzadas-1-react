@@ -1,7 +1,14 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 
 import Button from "../Button/Button";
 import { SelectsContext } from '../../context/selects/SelectsContext';
+import ContactFormServices from '../../services/ContactFormServices';
+import ContactApiFormServices from '../../services/ContactApiForm';
+import Alert from '../Alert/Alert';
+import { companyForm } from '../../constants/consts/company';
+import { realtorData } from "../../constants/consts/realtor";
+
+
 
 
 const FormWithUs = () =>{
@@ -17,17 +24,70 @@ const FormWithUs = () =>{
     setSelectedSelects,
   } = contextDataSelects;
 
-  const onOperationTypeChange = (ev) =>
-  setSelectedSelects({
-    ...selectedSelects,
-    operationType: ev.target.value,
+  const [formData, setFormData] = useState({
+    companyId: companyForm.id,
+    typeProperty: "",
+    action: "Contacto desde mi Servicios en página web",
+    fullName: "",
+    email: "",
+    phone: "",
+    region: "",
+    commune: "...",
+    address: "...",
+    landArea: "...",
+    termsAndConditions: false
+  })
+
+  // console.log(formData)
+
+  const [errorMsg, setErrorMsg] = useState({
+    allFieldRequierd: '',
+    serverEmailError: '',
   });
 
-  const onTypeOfPropertyChange = (ev) =>
-  setSelectedSelects({
-    ...selectedSelects,
-    typeOfProperty: ev.target.value,
+  // const [successMsg, setSuccessMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState({
+    formSubmitMsg: '',
+    formApiMsg: '',
   });
+  const [loading, setLoading] = useState(false);
+
+
+const onTypeOfPropertyChange = (ev) => {
+setSelectedSelects({
+  ...selectedSelects,
+  typeProperty: ev.target.value,
+});
+  setFormData({
+    ...formData, 
+  typeProperty: ev.target.value});
+}
+  // const onOperationTypeChange = (ev) =>
+  // setFormData({
+  //   ...formData,
+  //   operationType: ev.target.value,
+  // });
+
+  const handleNameChange = (ev) => {
+    setFormData({
+      ...formData,
+      fullName: ev.target.value,
+    });
+  };
+
+  const handleEmailChange = (ev) => {
+    setFormData({
+      ...formData,
+      email: ev.target.value,
+    });
+  };
+
+  const handlePhoneChange = (ev) => {
+    setFormData({
+      ...formData,
+      phone: ev.target.value,
+    });
+  };
 
   const onRegionChange = (ev) => {
     const selectedRegionId = ev.target.value;
@@ -44,6 +104,77 @@ const FormWithUs = () =>{
           ? 'Arica'
           : selectedRegion.name,
     });
+    setFormData({
+      ...formData,
+      region : ev.target.value,
+    })
+  };
+
+  const onFormSubmit = async (ev) => {
+    ev.preventDefault();
+
+    if (
+      Object.values(formData).includes('')
+    ) {
+      setErrorMsg({
+        allFieldRequierd:
+          'Por favor, completa todos los campos',
+      });
+      return;
+    }
+    try {
+      setLoading(true);
+      const response = await ContactFormServices.sendFormServices(
+        'Página avanzada',
+        // formData?.operationType,
+        formData?.typeProperty,
+        formData?.fullName,
+        formData?.email,
+        formData?.phone,
+        formData?.region,
+        realtorData?.email
+      );
+
+      /** Api services */
+      const apiResponse = await ContactApiFormServices.addContactForm2(formData);
+
+      if (response?.success === 'false') {
+        setErrorMsg({
+          allFieldRequierd: '',
+          serverEmailError:
+            'Se necesita activación de email del administrador/a',
+        });
+        setLoading(false);
+        resetForm();
+        return;
+      }
+
+      if (response.success === 'true' && apiResponse.status === 'ok') {
+        setLoading(false);
+        setErrorMsg({
+          allFieldRequierd: '',
+          serverEmailError: '',
+        });
+        setSuccessMsg({
+          formSubmitMsg:
+            'Solicitud enviada con exito! Un ejecutivo se contactara contigo',
+          formApiMsg: 'Success!!!',
+        });
+        setTimeout(() => {
+          setSuccessMsg({
+            formSubmitMsg: '',
+            formApiMsg: '',
+          });
+          resetForm();
+          window.location.reload();
+        }, 3000);
+      }
+    } catch (error) {
+      setLoading(false);
+      setErrorMsg({
+        serverEmailError: 'Oh! Ha ocurrido un error al enviar tu solicitud',
+      });
+    }
   };
 
     return(
@@ -54,8 +185,8 @@ const FormWithUs = () =>{
             </p>
           </div>
         {/* <form name="FormSubmit" onSubmit={onFormSubmit} className="xl:py-3 3xl:py-6 xl:px-6 3xl:px-20"> */}
-          <form name="FormSubmit" className="xl:py-3 3xl:py-6 xl:px-6 3xl:px-20">
-              <div className="flex mb-5 justify-center">
+          <form name="FormSubmit" onSubmit={onFormSubmit} className="xl:py-3 3xl:py-6 xl:px-6 3xl:px-20">
+              {/* <div className="flex mb-5 justify-center">
                   <select
                   value={selectedSelects?.operationType}
                   onChange={onOperationTypeChange}
@@ -68,32 +199,32 @@ const FormWithUs = () =>{
                       </option>
                   ))}
                   </select>
-              </div>
-          <div className="flex justify-center mb-5">
-              <select
-              value={selectedSelects?.typeOfProperty}
-              onChange={onTypeOfPropertyChange}
-              className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
-              >
-              <option value="">Tipo de propiedad</option>
-              {typeOfProperty.map((option) => (
-                  <option key={option.value} value={option.value}>
-                  {option.name}
-                  </option>
-              ))}
-              </select>
-        </div>
+              </div> */}
+            <div className="flex justify-center mb-5">
+                <select
+                value={selectedSelects?.typeProperty}
+                onChange={onTypeOfPropertyChange}
+                className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
+                >
+                <option value="">Tipo de propiedad</option>
+                {typeOfProperty.map((option) => (
+                    <option key={option.value} value={option.value}>
+                    {option.name}
+                    </option>
+                ))}
+                </select>
+            </div>
             <div className="flex mb-5">
               <div className="w-full  flex justify-center items-center flex-col">
                 <input
                   type="text"
-                  placeholder="Nombre"
-                  name="name"
-                  id="name"
+                  placeholder="Nombre completo"
+                  name="fullName"
+                  id="fullName"
                   className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
                   minLength="3"
-                  // value={formData?.name}
-                  // onChange={handleNameChange}
+                  value={formData?.fullName}
+                  onChange={handleNameChange}
                 />
               </div>
             </div>
@@ -101,12 +232,12 @@ const FormWithUs = () =>{
               <div className="w-full flex justify-center items-center flex-col">
                 <input
                   type="text"
-                  name="lastName"
-                  id="lastName"
-                  placeholder="Apellido"
+                  name="phone"
+                  id="phone"
+                  placeholder="Teléfono"
                   className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
-                  // value={formData?.phone}
-                  // onChange={handlePhoneChange}
+                  value={formData?.phone}
+                  onChange={handlePhoneChange}
                 
                   minLength="3"
                 />
@@ -120,23 +251,8 @@ const FormWithUs = () =>{
                   id="email"
                   placeholder="Correo electrónico"
                   className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
-                  // value={formData?.email}
-                  // onChange={handleEmailChange}
-                />
-              </div>
-            </div>
-            <div className="flex mb-5">
-              <div className="w-full flex justify-center items-center flex-col">
-                <input
-                  type="number"
-                  name="phone"
-                  id="phone"
-                  placeholder="Teléfono"
-                  className="w-[90%] xl:w-full p-3 rounded-lg bg-white text-base text-secondary-700 placeholder:text-secondary-700 placeholder:font-normal outline-none"
-                  pattern="[0-9]{9}"
-                  maxLength="9"
-                  // value={formData?.subject}
-                  // onChange={handleSubjectChange}
+                  value={formData?.email}
+                  onChange={handleEmailChange}
                 />
               </div>
             </div>
@@ -154,7 +270,7 @@ const FormWithUs = () =>{
           </div>
     
     
-            {/* {errorMsg?.serverEmailError && (
+            {errorMsg?.serverEmailError && (
               <Alert type="danger" message={errorMsg?.serverEmailError} />
             )}
     
@@ -168,7 +284,7 @@ const FormWithUs = () =>{
               >
                 {successMsg?.formSubmitMsg}
               </div>
-            )} */}
+            )}
     
             <div className="flex mb-5 justify-center items-center">
               <button
@@ -176,8 +292,7 @@ const FormWithUs = () =>{
                 className="block w-[200px] p-4 my-2 mb-4  font-semibold text-md rounded-full hover:shadow-sm transition ease-in-out duration-300 text-secondary bg-primary hover:bg-primary-opacity"
               >
                 <span className="max-h-10">
-                  Enviar
-                  {/* {loading ? (
+                  {loading ? (
                     <div role="status">
                       <svg
                         aria-hidden="true"
@@ -199,7 +314,7 @@ const FormWithUs = () =>{
                     </div>
                   ) : (
                     'Contactarme'
-                  )} */}
+                  )}
                 </span>
               </button>
             </div>

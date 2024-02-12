@@ -38,7 +38,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, property, props }) => {
       ...prevViewport,
       latitude: latitudeProp,
       longitude: longitudeProp,
-      zoom: 15,
+      zoom: 13,
     }));
   }, []);
 
@@ -54,7 +54,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, property, props }) => {
           </Link>
         </h3> */}
 
-        <h4 className="flex ml-2 xl:ml-5 items-center my-5 text-gray-600">
+        <h4 className="flex ml-2 xl:ml-5 items-center my-5 text-secondary">
           <span>
             <FaMapMarkerAlt className="mr-2" />
           </span>
@@ -92,7 +92,7 @@ const ReactMap = ({ longitudeProp, latitudeProp, property, props }) => {
         <Marker
           latitude={latitudeProp}
           longitude={longitudeProp}
-          draggable={true}
+          draggable={false}
           onDragEnd={handleMarkerDrag}
           onClick={() => setShowPopup(!showPopup)}
         >
@@ -101,16 +101,16 @@ const ReactMap = ({ longitudeProp, latitudeProp, property, props }) => {
               longitude={longitudeProp}
               latitude={latitudeProp}
               onClose={() => setShowPopup(false)}
-              anchor="bottom"
+              anchor="right"
               closeButton={false}
               closeOnClick={false}
               dynamicPosition={true}
-              focusAfterOpen={false}
+              focusAfterOpen={true}
               offsetTop={-10}
-              offsetLeft={-10}
-              closeOnMove={false}
+              offsetLeft={-20}
+              closeOnMove={true}
               style={{
-                zIndex: 100,
+                zIndex: 10,
                 cursor: 'pointer',
               }}
             >
