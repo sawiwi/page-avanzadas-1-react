@@ -1,6 +1,6 @@
 export const realtorData = {
   // email: 'contacto@unne.cl',
-  email:'fabian.salas.astete@gmail.com',
+  email:'fabians@bidata.cl',
   phone:953858376,
   address: 'RentalProp Spa Apoquindo 6410 Of.605, Las condes',
 
